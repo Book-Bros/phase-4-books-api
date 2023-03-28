@@ -3,8 +3,10 @@ class ApplicationController < ActionController::API
 rescue_from ActiveRecord::StandardError, with: :standard_error_finder
 
     def user
-        user = User.find(session[:uid])
+        User.find(session[:uid])
     end
+
+    private
 
     def standard_error_finder
         render json: {errors: invalid.errors}, status: :400
