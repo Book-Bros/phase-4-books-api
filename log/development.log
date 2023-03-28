@@ -279,3 +279,46 @@ Processing by ReviewsController#create as */*
 Completed 200 OK in 102ms (Views: 4.5ms | ActiveRecord: 77.3ms | Allocations: 7435)
 
 
+Started GET "/books/1/reviews/1" for 127.0.0.1 at 2023-03-28 15:54:30 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#show as */*
+  Parameters: {"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ...", "book_id"=>"1", "id"=>"1", "review"=>{"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ..."}}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:8:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Review (2.96ms)
+Completed 200 OK in 49ms (Views: 9.5ms | ActiveRecord: 1.2ms | Allocations: 8258)
+
+
+Started GET "/books/1/reviews/2" for 127.0.0.1 at 2023-03-28 15:54:54 +0300
+Processing by ReviewsController#show as */*
+  Parameters: {"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ...", "book_id"=>"1", "id"=>"2", "review"=>{"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ..."}}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:8:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.13ms)
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.1ms | Allocations: 2156)
+
+
+Started GET "/books/1/reviews/3" for 127.0.0.1 at 2023-03-28 15:55:03 +0300
+Processing by ReviewsController#show as */*
+  Parameters: {"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ...", "book_id"=>"1", "id"=>"3", "review"=>{"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ..."}}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:8:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 637)
+
+
+Started GET "/books/1/reviews/3" for 127.0.0.1 at 2023-03-28 15:56:02 +0300
+  
+SyntaxError (/home/pimo/Development/code/phase04/phase-4-books-api/app/controllers/reviews_controller.rb:19: syntax error, unexpected end-of-input):
+  
+app/controllers/reviews_controller.rb:19: syntax error, unexpected end-of-input
+app/controllers/reviews_controller.rb:19: syntax error, unexpected end-of-input
+Started GET "/books/1/reviews/3" for 127.0.0.1 at 2023-03-28 15:56:22 +0300
+Processing by ReviewsController#show as */*
+  Parameters: {"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ...", "book_id"=>"1", "id"=>"3", "review"=>{"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ..."}}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:8:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 404 Not Found in 4ms (Views: 1.4ms | ActiveRecord: 0.8ms | Allocations: 1063)
+
+

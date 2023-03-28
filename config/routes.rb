@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   # Reviews
 post '/books/:book_id/reviews', to: "reviews#create"
+get '/books/:book_id/reviews/:id', to: "reviews#show"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
