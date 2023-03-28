@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   # Reviews
 post '/books/:book_id/reviews', to: "reviews#create"
 get '/books/:book_id/reviews/:id', to: "reviews#show"
+get '/books/:book_id/reviews', to: "reviews#index"
+delete '/books/:book_id/reviews/:id', to: "reviews#destroy"
+put '/books/:book_id/reviews/:id', to: "reviews#update"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
