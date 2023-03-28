@@ -156,3 +156,126 @@ Processing by UsersController#check_logged_in as */*
 Completed 200 OK in 24ms (Views: 18.2ms | ActiveRecord: 0.5ms | Allocations: 2424)
 
 
+Started GET "/users" for 127.0.0.1 at 2023-03-28 14:55:11 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"testing", "password"=>"[FILTERED]", "user"=>{"username"=>"testing"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f0e8b62d900>, params: {"username"=>"testing", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"testing"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:3:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "testing"], ["email", nil], ["password_digest", "[FILTERED]"], ["profile_image", nil], ["created_at", "2023-03-28 11:55:11.954804"], ["updated_at", "2023-03-28 11:55:11.954804"]]
+  ↳ app/controllers/users_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (316.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:3:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.67ms)
+Completed 201 Created in 751ms (Views: 100.3ms | ActiveRecord: 318.2ms | Allocations: 12921)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-28 15:05:04 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users"):
+  
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 15:05:49 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"wellsfargo", "email"=>"test@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"wellsfargo", "email"=>"test@mail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "wellsfargo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 401 Unauthorized in 65ms (Views: 14.4ms | ActiveRecord: 0.9ms | Allocations: 2225)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 15:06:59 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"wellsfargo", "email"=>"test@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"wellsfargo", "email"=>"test@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "wellsfargo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 4ms (Views: 1.2ms | ActiveRecord: 1.7ms | Allocations: 1039)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-28 15:07:04 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"wellsfargo", "email"=>"test@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"wellsfargo", "email"=>"test@mail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f0e8cf94880>, params: {"username"=>"wellsfargo", "email"=>"test@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"wellsfargo", "email"=>"test@mail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:3:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "wellsfargo"], ["email", "test@mail.com"], ["password_digest", "[FILTERED]"], ["profile_image", nil], ["created_at", "2023-03-28 12:07:05.067148"], ["updated_at", "2023-03-28 12:07:05.067148"]]
+  ↳ app/controllers/users_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (97.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:3:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.13ms)
+Completed 201 Created in 400ms (Views: 5.1ms | ActiveRecord: 98.2ms | Allocations: 4392)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Hobbit"], ["author", "JRR Tolkien"], ["description", "Bilbo Baggins is a hobbit who enjoys a comfortable, unambitious life, rarely traveling any farther than his pantry or cellar. But his contentment is disturbed when the wizard Gandalf and a company of dwarves arrive on his doorstep one day to whisk him away on an adventure. They have launched a plot to raid the treasure hoard guarded by Smaug the Magnificent, a large and very dangerous dragon. Bilbo reluctantly joins their quest, unaware that on his journey to the Lonely Mountain he will encounter both a magic ring and a frightening creature known as Gollum."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-28 12:35:34.328796"], ["updated_at", "2023-03-28 12:35:34.328796"]]
+  [1m[36mTRANSACTION (72.8ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/books/1/reviews" for 127.0.0.1 at 2023-03-28 15:38:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/pimo/Development/code/phase04/phase-4-books-api/app/controllers/reviews_controller.rb:3: syntax error, unexpected ',', expecting =>
+...iew.create!({...reviews_params, user_id: user.id})
+...                              ^
+):
+  
+app/controllers/reviews_controller.rb:3: syntax error, unexpected ',', expecting =>
+app/controllers/reviews_controller.rb:3: syntax error, unexpected ',', expecting =>
+Started POST "/books/1/reviews" for 127.0.0.1 at 2023-03-28 15:39:41 +0300
+Processing by ReviewsController#create as */*
+  Parameters: {"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ...", "book_id"=>"1", "review"=>{"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ..."}}
+Completed 404 Not Found in 41ms (ActiveRecord: 3.3ms | Allocations: 4392)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/application_controller.rb:6:in `user'
+app/controllers/reviews_controller.rb:3:in `create'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 15:41:06 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"wellsfargo", "password"=>"[FILTERED]", "user"=>{"username"=>"wellsfargo"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "wellsfargo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 287ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 5717)
+
+
+Started POST "/books/:book_id/reviews" for 127.0.0.1 at 2023-03-28 15:41:49 +0300
+Processing by ReviewsController#create as */*
+  Parameters: {"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ...", "book_id"=>":book_id", "review"=>{"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ..."}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `user'
+[31mUnpermitted parameter: :review. Context: { controller: ReviewsController, action: create, request: #<ActionDispatch::Request:0x00007f15d1fef978>, params: {"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ...", "controller"=>"reviews", "action"=>"create", "book_id"=>":book_id", "review"=>{"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ..."}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+Completed 422 Unprocessable Entity in 244ms (ActiveRecord: 3.0ms | Allocations: 17897)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Book must exist):
+  
+app/controllers/reviews_controller.rb:3:in `create'
+Started POST "/books/1/reviews" for 127.0.0.1 at 2023-03-28 15:42:07 +0300
+Processing by ReviewsController#create as */*
+  Parameters: {"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ...", "book_id"=>"1", "review"=>{"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ..."}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `user'
+[31mUnpermitted parameter: :review. Context: { controller: ReviewsController, action: create, request: #<ActionDispatch::Request:0x00007f15b3650020>, params: {"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ...", "controller"=>"reviews", "action"=>"create", "book_id"=>"1", "review"=>{"title"=>"Nice Book", "content"=>"Nice read. I like the lore and the ..."}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nice Book"], ["content", "Nice read. I like the lore and the ..."], ["user_id", 3], ["book_id", 1], ["created_at", "2023-03-28 12:42:07.210975"], ["updated_at", "2023-03-28 12:42:07.210975"]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (76.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Review (0.94ms)
+Completed 200 OK in 102ms (Views: 4.5ms | ActiveRecord: 77.3ms | Allocations: 7435)
+
+
