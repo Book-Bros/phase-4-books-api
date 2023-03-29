@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+    skip_before_action :authorize, only: [:login, :create]
+
+
     def create
       new_user = User.create!(user_params)
         render json: new_user, status: :created
@@ -17,6 +20,11 @@ class UsersController < ApplicationController
     def logout
         session.delete :uid
         render json: {message: "Logged out successfully"}, status: :ok
+    end
+
+    def update_password
+        user.update!(password: params[:password])
+        render json: {message: "Password updated successfully"}, status: :ok
     end
 
     def check_logged_in
