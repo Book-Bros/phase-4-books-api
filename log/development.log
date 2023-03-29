@@ -1477,3 +1477,671 @@ Processing by BooksController#destroy as */*
 Completed 204 No Content in 101ms (Views: 2.0ms | ActiveRecord: 87.9ms | Allocations: 3830)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (466.4ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "reviews";
+DELETE FROM "books";
+DELETE FROM "book_genres";
+DELETE FROM "genres"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Hobbit"], ["author", "JRR Tolkien"], ["description", "Bilbo Baggins is a hobbit who enjoys a comfortable, unambitious life, rarely traveling any farther than his pantry or cellar. But his contentment is disturbed when the wizard Gandalf and a company of dwarves arrive on his doorstep one day to whisk him away on an adventure. They have launched a plot to raid the treasure hoard guarded by Smaug the Magnificent, a large and very dangerous dragon. Bilbo reluctantly joins their quest, unaware that on his journey to the Lonely Mountain he will encounter both a magic ring and a frightening creature known as Gollum."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 11:52:47.540862"], ["updated_at", "2023-03-29 11:52:47.540862"]]
+  [1m[36mTRANSACTION (97.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "realistic fiction"], ["created_at", "2023-03-29 11:52:48.227877"], ["updated_at", "2023-03-29 11:52:48.227877"]]
+  [1m[36mTRANSACTION (96.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "fairy tale"], ["created_at", "2023-03-29 11:52:48.331387"], ["updated_at", "2023-03-29 11:52:48.331387"]]
+  [1m[36mTRANSACTION (85.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "crime/detective"], ["created_at", "2023-03-29 11:52:48.433030"], ["updated_at", "2023-03-29 11:52:48.433030"]]
+  [1m[36mTRANSACTION (87.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "classic"], ["created_at", "2023-03-29 11:52:48.542689"], ["updated_at", "2023-03-29 11:52:48.542689"]]
+  [1m[36mTRANSACTION (82.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "mystery"], ["created_at", "2023-03-29 11:52:48.641824"], ["updated_at", "2023-03-29 11:52:48.641824"]]
+  [1m[36mTRANSACTION (360.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "speech"], ["created_at", "2023-03-29 11:52:49.015568"], ["updated_at", "2023-03-29 11:52:49.015568"]]
+  [1m[36mTRANSACTION (82.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "historical fiction"], ["created_at", "2023-03-29 11:52:49.106804"], ["updated_at", "2023-03-29 11:52:49.106804"]]
+  [1m[36mTRANSACTION (84.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "horror"], ["created_at", "2023-03-29 11:52:49.206240"], ["updated_at", "2023-03-29 11:52:49.206240"]]
+  [1m[36mTRANSACTION (85.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "mythopoeia"], ["created_at", "2023-03-29 11:52:49.305796"], ["updated_at", "2023-03-29 11:52:49.305796"]]
+  [1m[36mTRANSACTION (85.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "mythology"], ["created_at", "2023-03-29 11:52:49.410202"], ["updated_at", "2023-03-29 11:52:49.410202"]]
+  [1m[36mTRANSACTION (81.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "fiction narrative"], ["created_at", "2023-03-29 11:52:49.507562"], ["updated_at", "2023-03-29 11:52:49.507562"]]
+  [1m[36mTRANSACTION (87.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "science fiction"], ["created_at", "2023-03-29 11:52:49.617196"], ["updated_at", "2023-03-29 11:52:49.617196"]]
+  [1m[36mTRANSACTION (87.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "metafiction"], ["created_at", "2023-03-29 11:52:49.726353"], ["updated_at", "2023-03-29 11:52:49.726353"]]
+  [1m[36mTRANSACTION (78.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (2.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "reference book"], ["created_at", "2023-03-29 11:52:49.826660"], ["updated_at", "2023-03-29 11:52:49.826660"]]
+  [1m[36mTRANSACTION (106.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "suspense/thriller"], ["created_at", "2023-03-29 11:52:49.955552"], ["updated_at", "2023-03-29 11:52:49.955552"]]
+  [1m[36mTRANSACTION (87.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "book_genres"[0m
+  [1m[35m (136.2ms)[0m  [1m[35mCREATE TABLE "book_genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer NOT NULL, "genre_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  [1m[35m (94.2ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "author" varchar NOT NULL, "description" text, "cover_image" varchar DEFAULT 'https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres"[0m
+  [1m[35m (109.0ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews"[0m
+  [1m[35m (84.5ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "content" text NOT NULL, "user_id" integer NOT NULL, "book_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (83.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "profile_image" varchar DEFAULT 'https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (100.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (76.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230328080950)[0m
+  [1m[35m (85.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230328080512),
+(20230328080735),
+(20230328080819),
+(20230328080913);
+
+[0m
+  [1m[35m (117.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-29 12:14:19.317943"], ["updated_at", "2023-03-29 12:14:19.317943"]]
+  [1m[36mTRANSACTION (80.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7e518ca2365bc28391817ec897d7b4f5c5ab2598"], ["created_at", "2023-03-29 12:14:19.423592"], ["updated_at", "2023-03-29 12:14:19.423592"]]
+  [1m[36mTRANSACTION (68.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "book_genres"[0m
+  [1m[35m (96.2ms)[0m  [1m[35mCREATE TABLE "book_genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer NOT NULL, "genre_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  [1m[35m (94.7ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "author" varchar NOT NULL, "description" text, "cover_image" varchar DEFAULT 'https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres"[0m
+  [1m[35m (94.9ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews"[0m
+  [1m[35m (105.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "content" text NOT NULL, "user_id" integer NOT NULL, "book_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (94.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "profile_image" varchar DEFAULT 'https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (85.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (70.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230328080950)[0m
+  [1m[35m (86.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230328080512),
+(20230328080735),
+(20230328080819),
+(20230328080913);
+
+[0m
+  [1m[35m (118.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-29 12:14:20.401684"], ["updated_at", "2023-03-29 12:14:20.401684"]]
+  [1m[36mTRANSACTION (49.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2023-03-29 12:14:20.462166"], ["key", "environment"]]
+  [1m[36mTRANSACTION (74.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7e518ca2365bc28391817ec897d7b4f5c5ab2598"], ["created_at", "2023-03-29 12:14:20.550272"], ["updated_at", "2023-03-29 12:14:20.550272"]]
+  [1m[36mTRANSACTION (71.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science Fiction"], ["created_at", "2023-03-29 12:14:20.676981"], ["updated_at", "2023-03-29 12:14:20.676981"]]
+  [1m[36mTRANSACTION (77.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fantasy"], ["created_at", "2023-03-29 12:14:20.760852"], ["updated_at", "2023-03-29 12:14:20.760852"]]
+  [1m[36mTRANSACTION (87.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.9ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Romance"], ["created_at", "2023-03-29 12:14:20.865331"], ["updated_at", "2023-03-29 12:14:20.865331"]]
+  [1m[36mTRANSACTION (110.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mystery"], ["created_at", "2023-03-29 12:14:20.996691"], ["updated_at", "2023-03-29 12:14:20.996691"]]
+  [1m[36mTRANSACTION (86.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Thriller"], ["created_at", "2023-03-29 12:14:21.106065"], ["updated_at", "2023-03-29 12:14:21.106065"]]
+  [1m[36mTRANSACTION (66.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Horror"], ["created_at", "2023-03-29 12:14:21.202353"], ["updated_at", "2023-03-29 12:14:21.202353"]]
+  [1m[36mTRANSACTION (82.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Historical Fiction"], ["created_at", "2023-03-29 12:14:21.306105"], ["updated_at", "2023-03-29 12:14:21.306105"]]
+  [1m[36mTRANSACTION (71.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Contemporary Fiction"], ["created_at", "2023-03-29 12:14:21.399288"], ["updated_at", "2023-03-29 12:14:21.399288"]]
+  [1m[36mTRANSACTION (78.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Memoir"], ["created_at", "2023-03-29 12:14:21.505456"], ["updated_at", "2023-03-29 12:14:21.505456"]]
+  [1m[36mTRANSACTION (75.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Biography"], ["created_at", "2023-03-29 12:14:21.606123"], ["updated_at", "2023-03-29 12:14:21.606123"]]
+  [1m[36mTRANSACTION (71.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cooking"], ["created_at", "2023-03-29 12:14:21.684549"], ["updated_at", "2023-03-29 12:14:21.684549"]]
+  [1m[36mTRANSACTION (75.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Travel"], ["created_at", "2023-03-29 12:14:21.774844"], ["updated_at", "2023-03-29 12:14:21.774844"]]
+  [1m[36mTRANSACTION (94.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Art"], ["created_at", "2023-03-29 12:14:21.890642"], ["updated_at", "2023-03-29 12:14:21.890642"]]
+  [1m[36mTRANSACTION (96.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Poetry"], ["created_at", "2023-03-29 12:14:22.001806"], ["updated_at", "2023-03-29 12:14:22.001806"]]
+  [1m[36mTRANSACTION (88.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Graphic Novel"], ["created_at", "2023-03-29 12:14:22.108723"], ["updated_at", "2023-03-29 12:14:22.108723"]]
+  [1m[36mTRANSACTION (74.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Young Adult"], ["created_at", "2023-03-29 12:14:22.190320"], ["updated_at", "2023-03-29 12:14:22.190320"]]
+  [1m[36mTRANSACTION (95.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Children's Literature"], ["created_at", "2023-03-29 12:14:22.300086"], ["updated_at", "2023-03-29 12:14:22.300086"]]
+  [1m[36mTRANSACTION (94.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Business"], ["created_at", "2023-03-29 12:14:22.410583"], ["updated_at", "2023-03-29 12:14:22.410583"]]
+  [1m[36mTRANSACTION (84.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Self-help"], ["created_at", "2023-03-29 12:14:22.510838"], ["updated_at", "2023-03-29 12:14:22.510838"]]
+  [1m[36mTRANSACTION (84.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science"], ["created_at", "2023-03-29 12:14:22.611081"], ["updated_at", "2023-03-29 12:14:22.611081"]]
+  [1m[36mTRANSACTION (84.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Hobbit"], ["author", "JRR Tolkien"], ["description", "Bilbo Baggins is a hobbit who enjoys a comfortable, unambitious life, rarely traveling any farther than his pantry or cellar. But his contentment is disturbed when the wizard Gandalf and a company of dwarves arrive on his doorstep one day to whisk him away on an adventure. They have launched a plot to raid the treasure hoard guarded by Smaug the Magnificent, a large and very dangerous dragon. Bilbo reluctantly joins their quest, unaware that on his journey to the Lonely Mountain he will encounter both a magic ring and a frightening creature known as Gollum."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 12:14:22.744666"], ["updated_at", "2023-03-29 12:14:22.744666"]]
+  [1m[36mTRANSACTION (90.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Secret Garden"], ["author", "Frances Hodgson Burnett"], ["description", "When orphaned Mary Lennox comes to live at her uncle's great house on the Yorkshire Moors, she finds it full of secrets. The mansion has nearly one hundred rooms, and her uncle keeps himself locked up. And at night, she hears the sound of crying down one of the long corridors."], ["cover_image", "https://m.media-amazon.com/images/I/61elZCuOZ0L._SL350_.jpg"], ["created_at", "2023-03-29 12:14:22.842923"], ["updated_at", "2023-03-29 12:14:22.842923"]]
+  [1m[36mTRANSACTION (85.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Harry Potter and the Sorcerer's Stone"], ["author", "JK Rowling"], ["description", "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible adventure is about to begin!"], ["cover_image", "https://m.media-amazon.com/images/I/413lxIe20jL.jpg"], ["created_at", "2023-03-29 12:14:22.942641"], ["updated_at", "2023-03-29 12:14:22.942641"]]
+  [1m[36mTRANSACTION (85.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Harry Potter and the Chamber of Secrets"], ["author", "JK Rowling"], ["description", "Harry Potter's summer has included the worst birthday ever, doomy warnings from a house-elf called Dobby, and rescue from the Dursleys by his friend Ron Weasley in a magical flying car! Back at Hogwarts School of Witchcraft and Wizardry for his second year, Harry hears strange whispers echo through empty corridors - and then the attacks start. Students are found as though turned to stone... Dobby's sinister predictions seem to be coming true."], ["cover_image", "https://m.media-amazon.com/images/I/51TA3VfN8RL.jpg"], ["created_at", "2023-03-29 12:14:23.041810"], ["updated_at", "2023-03-29 12:14:23.041810"]]
+  [1m[36mTRANSACTION (85.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Harry Potter and the Prizoner of Azkaban"], ["author", "JK Rowling"], ["description", "When the Knight Bus crashes through the darkness and screeches to a halt in front of him, it's the start of another far from ordinary year at Hogwarts for Harry Potter. Sirius Black, escaped mass-murderer and follower of Lord Voldemort, is on the run - and they say he is coming after Harry. In his first ever Divination class, Professor Trelawney sees an omen of death in Harry's tea leaves... But perhaps most terrifying of all are the Dementors patrolling the school grounds, with their soul-sucking kiss..."], ["cover_image", "https://m.media-amazon.com/images/I/51Dfqo6jR5L.jpg"], ["created_at", "2023-03-29 12:14:23.142005"], ["updated_at", "2023-03-29 12:14:23.142005"]]
+  [1m[36mTRANSACTION (83.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Harry Potter and the Goblet of Fire"], ["author", "JK Rowling"], ["description", "The Triwizard Tournament is to be held at Hogwarts. Only wizards who are over seventeen are allowed to enter - but that doesn't stop Harry dreaming that he will win the competition. Then at Hallowe'en, when the Goblet of Fire makes its selection, Harry is amazed to find his name is one of those that the magical cup picks out. He will face death-defying tasks, dragons and Dark wizards, but with the help of his best friends, Ron and Hermione, he might just make it through - alive!"], ["cover_image", "https://m.media-amazon.com/images/I/51Vjb2qJwzL.jpg"], ["created_at", "2023-03-29 12:14:23.241651"], ["updated_at", "2023-03-29 12:14:23.241651"]]
+  [1m[36mTRANSACTION (74.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Harry Potter and the Order of the Phoenix"], ["author", "JK Rowling"], ["description", "Dark times have come to Hogwarts. After the Dementors' attack on his cousin Dudley, Harry Potter knows that Voldemort will stop at nothing to find him. There are many who deny the Dark Lord's return, but Harry is not alone: a secret order gathers at Grimmauld Place to fight against the Dark forces. Harry must allow Professor Snape to teach him how to protect himself from Voldemort's savage assaults on his mind. But they are growing stronger by the day and Harry is running out of time ..."], ["cover_image", "https://m.media-amazon.com/images/I/51-SI2+aQ2L.jpg"], ["created_at", "2023-03-29 12:14:23.336288"], ["updated_at", "2023-03-29 12:14:23.336288"]]
+  [1m[36mTRANSACTION (104.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Harry Potter and the Half Blood Prince"], ["author", "JK Rowling"], ["description", "When Dumbledore arrives at Privet Drive one summer night to collect Harry Potter, his wand hand is blackened and shrivelled, but he does not reveal why. Secrets and suspicion are spreading through the wizarding world, and Hogwarts itself is not safe. Harry is convinced that Malfoy bears the Dark Mark: there is a Death Eater amongst them. Harry will need powerful magic and true friends as he explores Voldemort's darkest secrets, and Dumbledore prepares him to face his destiny..."], ["cover_image", "https://m.media-amazon.com/images/I/51myHyjJsyL.jpg"], ["created_at", "2023-03-29 12:14:23.455796"], ["updated_at", "2023-03-29 12:14:23.455796"]]
+  [1m[36mTRANSACTION (66.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Harry Potter and the Deathly Hallows"], ["author", "JK Rowling"], ["description", "As he climbs into the sidecar of Hagrid's motorbike and takes to the skies, leaving Privet Drive for the last time, Harry Potter knows that Lord Voldemort and the Death Eaters are not far behind. The protective charm that has kept Harry safe until now is broken, but he cannot keep hiding. The Dark Lord is breathing fear into everything Harry loves and to stop him Harry will have to find and destroy the remaining Horcruxes. The final battle must begin - Harry must stand and face his enemy..."], ["cover_image", "https://m.media-amazon.com/images/I/511DhzIj4cL.jpg"], ["created_at", "2023-03-29 12:14:23.540260"], ["updated_at", "2023-03-29 12:14:23.540260"]]
+  [1m[36mTRANSACTION (74.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Hobbit"], ["author", "JRR Tolkien"], ["description", "Bilbo Baggins is a hobbit who enjoys a comfortable, unambitious life, rarely traveling any farther than his pantry or cellar. But his contentment is disturbed when the wizard Gandalf and a company of dwarves arrive on his doorstep one day to whisk him away on an adventure. They have launched a plot to raid the treasure hoard guarded by Smaug the Magnificent, a large and very dangerous dragon. Bilbo reluctantly joins their quest, unaware that on his journey to the Lonely Mountain he will encounter both a magic ring and a frightening creature known as Gollum."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 12:14:23.630793"], ["updated_at", "2023-03-29 12:14:23.630793"]]
+  [1m[36mTRANSACTION (75.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Fellowship of the Ring"], ["author", "JRR Tolkien"], ["description", "In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell into the hands of Bilbo Baggins, as told in The Hobbit. In a sleepy village in the Shire, young Frodo Baggins finds himself faced with an immense task, as his elderly cousin Bilbo entrusts the Ring to his care. Frodo must leave his home and make a perilous journey across Middle-earth to the Cracks of Doom, there to destroy the Ring and foil the Dark Lord in his evil purpose."], ["cover_image", "https://m.media-amazon.com/images/I/41kUPvqlguL.jpg"], ["created_at", "2023-03-29 12:14:23.722026"], ["updated_at", "2023-03-29 12:14:23.722026"]]
+  [1m[36mTRANSACTION (82.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Two Towers"], ["author", "JRR Tolkien"], ["description", "Frodo and his Companions of the Ring have been beset by danger during their quest to prevent the Ruling Ring from falling into the hands of the Dark Lord by destroying it in the Cracks of Doom. They have lost the wizard, Gandalf, in a battle in the Mines of Moria. And Boromir, seduced by the power of the Ring, tried to seize it by force. While Frodo and Sam made their escape, the rest of the company was attacked by Orcs. Now they continue the journey alone down the great River Anduin—alone, that is, save for the mysterious creeping figure that follows wherever they go. "], ["cover_image", "https://m.media-amazon.com/images/I/4123zOAwAgL.jpg"], ["created_at", "2023-03-29 12:14:23.821769"], ["updated_at", "2023-03-29 12:14:23.821769"]]
+  [1m[36mTRANSACTION (97.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Return of the King"], ["author", "JRR Tolkien"], ["description", "As the Shadow of Mordor grows across the land, the Companions of the Ring have become involved in separate adventures. Aragorn, revealed as the hidden heir of the ancient Kings of the West, has joined with the Riders of Rohan against the forces of Isengard, and takes part in the desperate victory of the Hornburg. Merry and Pippin, captured by Orcs, escape into Fangorn Forest and there encounter the Ents. Gandalf has miraculously returned and defeated the evil wizard, Saruman. Sam has left his master for dead after a battle with the giant spider, Shelob; but Frodo is still alive—now in the foul hands of the Orcs. And all the while the armies of the Dark Lord are massing as the One Ring draws ever nearer to the Cracks of Doom."], ["cover_image", "https://m.media-amazon.com/images/I/41KGl2FqeAL.jpg"], ["created_at", "2023-03-29 12:14:23.935168"], ["updated_at", "2023-03-29 12:14:23.935168"]]
+  [1m[36mTRANSACTION (77.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["genre_id", 7], ["created_at", "2023-03-29 12:14:24.278452"], ["updated_at", "2023-03-29 12:14:24.278452"]]
+  [1m[36mTRANSACTION (58.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["genre_id", 12], ["created_at", "2023-03-29 12:14:24.366242"], ["updated_at", "2023-03-29 12:14:24.366242"]]
+  [1m[36mTRANSACTION (81.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 3], ["genre_id", 7], ["created_at", "2023-03-29 12:14:24.484501"], ["updated_at", "2023-03-29 12:14:24.484501"]]
+  [1m[36mTRANSACTION (87.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 4], ["genre_id", 19], ["created_at", "2023-03-29 12:14:24.604674"], ["updated_at", "2023-03-29 12:14:24.604674"]]
+  [1m[36mTRANSACTION (101.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 5], ["genre_id", 19], ["created_at", "2023-03-29 12:14:24.739889"], ["updated_at", "2023-03-29 12:14:24.739889"]]
+  [1m[36mTRANSACTION (53.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 6], ["genre_id", 19], ["created_at", "2023-03-29 12:14:24.808855"], ["updated_at", "2023-03-29 12:14:24.808855"]]
+  [1m[36mTRANSACTION (74.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 7], ["genre_id", 16], ["created_at", "2023-03-29 12:14:24.909473"], ["updated_at", "2023-03-29 12:14:24.909473"]]
+  [1m[36mTRANSACTION (80.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.9ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 8], ["genre_id", 8], ["created_at", "2023-03-29 12:14:25.019737"], ["updated_at", "2023-03-29 12:14:25.019737"]]
+  [1m[36mTRANSACTION (71.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 9], ["genre_id", 8], ["created_at", "2023-03-29 12:14:25.119784"], ["updated_at", "2023-03-29 12:14:25.119784"]]
+  [1m[36mTRANSACTION (91.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 10], ["genre_id", 6], ["created_at", "2023-03-29 12:14:25.245509"], ["updated_at", "2023-03-29 12:14:25.245509"]]
+  [1m[36mTRANSACTION (78.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 11], ["genre_id", 1], ["created_at", "2023-03-29 12:14:25.357736"], ["updated_at", "2023-03-29 12:14:25.357736"]]
+  [1m[36mTRANSACTION (54.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 12], ["genre_id", 6], ["created_at", "2023-03-29 12:14:25.442166"], ["updated_at", "2023-03-29 12:14:25.442166"]]
+  [1m[36mTRANSACTION (47.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "book_genres"[0m
+  [1m[35m (123.8ms)[0m  [1m[35mCREATE TABLE "book_genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer NOT NULL, "genre_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  [1m[35m (123.8ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "author" varchar NOT NULL, "description" text, "cover_image" varchar DEFAULT 'https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres"[0m
+  [1m[35m (103.5ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews"[0m
+  [1m[35m (90.0ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "content" text NOT NULL, "user_id" integer NOT NULL, "book_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (88.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "profile_image" varchar DEFAULT 'https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (143.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (74.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230328080950)[0m
+  [1m[35m (74.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230328080512),
+(20230328080735),
+(20230328080819),
+(20230328080913);
+
+[0m
+  [1m[35m (75.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-29 12:29:08.068325"], ["updated_at", "2023-03-29 12:29:08.068325"]]
+  [1m[36mTRANSACTION (55.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7e518ca2365bc28391817ec897d7b4f5c5ab2598"], ["created_at", "2023-03-29 12:29:08.152690"], ["updated_at", "2023-03-29 12:29:08.152690"]]
+  [1m[36mTRANSACTION (78.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "book_genres"[0m
+  [1m[35m (79.3ms)[0m  [1m[35mCREATE TABLE "book_genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer NOT NULL, "genre_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  [1m[35m (97.8ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "author" varchar NOT NULL, "description" text, "cover_image" varchar DEFAULT 'https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres"[0m
+  [1m[35m (100.2ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews"[0m
+  [1m[35m (90.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "content" text NOT NULL, "user_id" integer NOT NULL, "book_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (141.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "profile_image" varchar DEFAULT 'https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (105.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (86.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230328080950)[0m
+  [1m[35m (71.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230328080512),
+(20230328080735),
+(20230328080819),
+(20230328080913);
+
+[0m
+  [1m[35m (135.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-29 12:29:09.249656"], ["updated_at", "2023-03-29 12:29:09.249656"]]
+  [1m[36mTRANSACTION (69.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2023-03-29 12:29:09.339939"], ["key", "environment"]]
+  [1m[36mTRANSACTION (79.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7e518ca2365bc28391817ec897d7b4f5c5ab2598"], ["created_at", "2023-03-29 12:29:09.439701"], ["updated_at", "2023-03-29 12:29:09.439701"]]
+  [1m[36mTRANSACTION (86.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science Fiction"], ["created_at", "2023-03-29 12:29:09.581329"], ["updated_at", "2023-03-29 12:29:09.581329"]]
+  [1m[36mTRANSACTION (83.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fantasy"], ["created_at", "2023-03-29 12:29:09.675112"], ["updated_at", "2023-03-29 12:29:09.675112"]]
+  [1m[36mTRANSACTION (75.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Romance"], ["created_at", "2023-03-29 12:29:09.764147"], ["updated_at", "2023-03-29 12:29:09.764147"]]
+  [1m[36mTRANSACTION (85.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mystery"], ["created_at", "2023-03-29 12:29:09.863315"], ["updated_at", "2023-03-29 12:29:09.863315"]]
+  [1m[36mTRANSACTION (73.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Thriller"], ["created_at", "2023-03-29 12:29:09.951747"], ["updated_at", "2023-03-29 12:29:09.951747"]]
+  [1m[36mTRANSACTION (82.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Horror"], ["created_at", "2023-03-29 12:29:10.051786"], ["updated_at", "2023-03-29 12:29:10.051786"]]
+  [1m[36mTRANSACTION (85.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Historical Fiction"], ["created_at", "2023-03-29 12:29:10.151262"], ["updated_at", "2023-03-29 12:29:10.151262"]]
+  [1m[36mTRANSACTION (84.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Contemporary Fiction"], ["created_at", "2023-03-29 12:29:10.251361"], ["updated_at", "2023-03-29 12:29:10.251361"]]
+  [1m[36mTRANSACTION (82.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Memoir"], ["created_at", "2023-03-29 12:29:10.348092"], ["updated_at", "2023-03-29 12:29:10.348092"]]
+  [1m[36mTRANSACTION (115.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Biography"], ["created_at", "2023-03-29 12:29:10.469319"], ["updated_at", "2023-03-29 12:29:10.469319"]]
+  [1m[36mTRANSACTION (93.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.6ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cooking"], ["created_at", "2023-03-29 12:29:10.572045"], ["updated_at", "2023-03-29 12:29:10.572045"]]
+  [1m[36mTRANSACTION (73.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Travel"], ["created_at", "2023-03-29 12:29:10.661580"], ["updated_at", "2023-03-29 12:29:10.661580"]]
+  [1m[36mTRANSACTION (71.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Art"], ["created_at", "2023-03-29 12:29:10.749495"], ["updated_at", "2023-03-29 12:29:10.749495"]]
+  [1m[36mTRANSACTION (67.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Poetry"], ["created_at", "2023-03-29 12:29:10.837819"], ["updated_at", "2023-03-29 12:29:10.837819"]]
+  [1m[36mTRANSACTION (69.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Graphic Novel"], ["created_at", "2023-03-29 12:29:10.926853"], ["updated_at", "2023-03-29 12:29:10.926853"]]
+  [1m[36mTRANSACTION (73.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Young Adult"], ["created_at", "2023-03-29 12:29:11.016891"], ["updated_at", "2023-03-29 12:29:11.016891"]]
+  [1m[36mTRANSACTION (71.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Children's Literature"], ["created_at", "2023-03-29 12:29:11.103548"], ["updated_at", "2023-03-29 12:29:11.103548"]]
+  [1m[36mTRANSACTION (71.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Business"], ["created_at", "2023-03-29 12:29:11.191990"], ["updated_at", "2023-03-29 12:29:11.191990"]]
+  [1m[36mTRANSACTION (73.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Self-help"], ["created_at", "2023-03-29 12:29:11.282249"], ["updated_at", "2023-03-29 12:29:11.282249"]]
+  [1m[36mTRANSACTION (72.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science"], ["created_at", "2023-03-29 12:29:11.370931"], ["updated_at", "2023-03-29 12:29:11.370931"]]
+  [1m[36mTRANSACTION (70.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Pride and Prejudice"], ["author", "Jane Austen"], ["description", "When Elizabeth Bennet meets Mr. Darcy, she is repelled by his haughty manner. But gradually, as she discovers his true nature, she begins to respect and admire him--and eventually, to love him."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41FEoMd5E9L._SX324_BO1,204,203,200_.jpg"], ["created_at", "2023-03-29 12:29:11.498699"], ["updated_at", "2023-03-29 12:29:11.498699"]]
+  [1m[36mTRANSACTION (116.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "To Kill a Mockingbird"], ["author", "Harper Lee"], ["description", "The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51IXWZzlgSL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"], ["created_at", "2023-03-29 12:29:11.626629"], ["updated_at", "2023-03-29 12:29:11.626629"]]
+  [1m[36mTRANSACTION (87.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "1984"], ["author", "George Orwell"], ["description", "Written in 1948, 1984 was George Orwell’s chilling prophecy about the future. And while 1984 has come and gone, its message remains..."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41aM4xOZxaL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"], ["created_at", "2023-03-29 12:29:11.734300"], ["updated_at", "2023-03-29 12:29:11.734300"]]
+  [1m[36mTRANSACTION (73.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Great Gatsby"], ["author", "F. Scott Fitzgerald"], ["description", "Jay Gatsby is the man who has everything. But one thing will always be out of his reach...."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41NssxNlPlS._SX331_BO1,204,203,200_.jpg"], ["created_at", "2023-03-29 12:29:11.823099"], ["updated_at", "2023-03-29 12:29:11.823099"]]
+  [1m[36mTRANSACTION (73.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Catcher in the Rye"], ["author", "J.D. Salinger"], ["description", "Holden narrates the story of a couple of days in his sixteen-year-old life, just after he's been expelled from prep school."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/518dVCGFuhL._SX323_BO1,204,203,200_.jpg"], ["created_at", "2023-03-29 12:29:11.911492"], ["updated_at", "2023-03-29 12:29:11.911492"]]
+  [1m[36mTRANSACTION (74.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Harry Potter and the Philosopher's Stone"], ["author", "J.K. Rowling"], ["description", "Harry Potter begins his journey as an orphaned boy wizard to become the hero of a generation."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51xJbFMRsxL.jpg"], ["created_at", "2023-03-29 12:29:12.000455"], ["updated_at", "2023-03-29 12:29:12.000455"]]
+  [1m[36mTRANSACTION (83.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Lord of the Rings"], ["author", "J.R.R. Tolkien"], ["description", "In a sleepy village in Shire, a young hobbit is entrusted with an immense task."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41Gk-Srm7QL.jpg"], ["created_at", "2023-03-29 12:29:12.099932"], ["updated_at", "2023-03-29 12:29:12.099932"]]
+  [1m[36mTRANSACTION (88.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["genre_id", 19], ["created_at", "2023-03-29 12:29:12.259780"], ["updated_at", "2023-03-29 12:29:12.259780"]]
+  [1m[36mTRANSACTION (52.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.9ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["genre_id", 5], ["created_at", "2023-03-29 12:29:12.335704"], ["updated_at", "2023-03-29 12:29:12.335704"]]
+  [1m[36mTRANSACTION (50.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 3], ["genre_id", 3], ["created_at", "2023-03-29 12:29:12.413774"], ["updated_at", "2023-03-29 12:29:12.413774"]]
+  [1m[36mTRANSACTION (71.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 4], ["genre_id", 5], ["created_at", "2023-03-29 12:29:12.514182"], ["updated_at", "2023-03-29 12:29:12.514182"]]
+  [1m[36mTRANSACTION (70.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 5], ["genre_id", 2], ["created_at", "2023-03-29 12:29:12.613328"], ["updated_at", "2023-03-29 12:29:12.613328"]]
+  [1m[36mTRANSACTION (70.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 6], ["genre_id", 8], ["created_at", "2023-03-29 12:29:12.712167"], ["updated_at", "2023-03-29 12:29:12.712167"]]
+  [1m[36mTRANSACTION (71.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 7], ["genre_id", 4], ["created_at", "2023-03-29 12:29:12.821166"], ["updated_at", "2023-03-29 12:29:12.821166"]]
+  [1m[36mTRANSACTION (76.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "book_genres"[0m
+  [1m[35m (136.6ms)[0m  [1m[35mCREATE TABLE "book_genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer NOT NULL, "genre_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  [1m[35m (94.5ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "author" varchar NOT NULL, "description" text, "cover_image" varchar DEFAULT 'https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres"[0m
+  [1m[35m (84.1ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews"[0m
+  [1m[35m (83.9ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "content" text NOT NULL, "user_id" integer NOT NULL, "book_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (77.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "profile_image" varchar DEFAULT 'https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (86.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (61.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230328080950)[0m
+  [1m[35m (65.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230328080512),
+(20230328080735),
+(20230328080819),
+(20230328080913);
+
+[0m
+  [1m[35m (164.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-29 12:29:40.648659"], ["updated_at", "2023-03-29 12:29:40.648659"]]
+  [1m[36mTRANSACTION (59.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7e518ca2365bc28391817ec897d7b4f5c5ab2598"], ["created_at", "2023-03-29 12:29:40.727817"], ["updated_at", "2023-03-29 12:29:40.727817"]]
+  [1m[36mTRANSACTION (60.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "book_genres"[0m
+  [1m[35m (90.1ms)[0m  [1m[35mCREATE TABLE "book_genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer NOT NULL, "genre_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  [1m[35m (94.8ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "author" varchar NOT NULL, "description" text, "cover_image" varchar DEFAULT 'https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres"[0m
+  [1m[35m (105.1ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews"[0m
+  [1m[35m (102.6ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "content" text NOT NULL, "user_id" integer NOT NULL, "book_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (113.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "profile_image" varchar DEFAULT 'https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (82.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (62.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230328080950)[0m
+  [1m[35m (51.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230328080512),
+(20230328080735),
+(20230328080819),
+(20230328080913);
+
+[0m
+  [1m[35m (97.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-29 12:29:41.675607"], ["updated_at", "2023-03-29 12:29:41.675607"]]
+  [1m[36mTRANSACTION (78.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2023-03-29 12:29:41.775450"], ["key", "environment"]]
+  [1m[36mTRANSACTION (78.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7e518ca2365bc28391817ec897d7b4f5c5ab2598"], ["created_at", "2023-03-29 12:29:41.865207"], ["updated_at", "2023-03-29 12:29:41.865207"]]
+  [1m[36mTRANSACTION (81.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.9ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science Fiction"], ["created_at", "2023-03-29 12:29:42.014562"], ["updated_at", "2023-03-29 12:29:42.014562"]]
+  [1m[36mTRANSACTION (72.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fantasy"], ["created_at", "2023-03-29 12:29:42.103070"], ["updated_at", "2023-03-29 12:29:42.103070"]]
+  [1m[36mTRANSACTION (76.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Romance"], ["created_at", "2023-03-29 12:29:42.193133"], ["updated_at", "2023-03-29 12:29:42.193133"]]
+  [1m[36mTRANSACTION (73.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mystery"], ["created_at", "2023-03-29 12:29:42.280716"], ["updated_at", "2023-03-29 12:29:42.280716"]]
+  [1m[36mTRANSACTION (73.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Thriller"], ["created_at", "2023-03-29 12:29:42.369494"], ["updated_at", "2023-03-29 12:29:42.369494"]]
+  [1m[36mTRANSACTION (85.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Horror"], ["created_at", "2023-03-29 12:29:42.471252"], ["updated_at", "2023-03-29 12:29:42.471252"]]
+  [1m[36mTRANSACTION (72.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Historical Fiction"], ["created_at", "2023-03-29 12:29:42.558027"], ["updated_at", "2023-03-29 12:29:42.558027"]]
+  [1m[36mTRANSACTION (59.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Contemporary Fiction"], ["created_at", "2023-03-29 12:29:42.636525"], ["updated_at", "2023-03-29 12:29:42.636525"]]
+  [1m[36mTRANSACTION (71.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Memoir"], ["created_at", "2023-03-29 12:29:42.724672"], ["updated_at", "2023-03-29 12:29:42.724672"]]
+  [1m[36mTRANSACTION (74.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Biography"], ["created_at", "2023-03-29 12:29:42.812687"], ["updated_at", "2023-03-29 12:29:42.812687"]]
+  [1m[36mTRANSACTION (73.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cooking"], ["created_at", "2023-03-29 12:29:42.901565"], ["updated_at", "2023-03-29 12:29:42.901565"]]
+  [1m[36mTRANSACTION (73.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Travel"], ["created_at", "2023-03-29 12:29:42.992720"], ["updated_at", "2023-03-29 12:29:42.992720"]]
+  [1m[36mTRANSACTION (71.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Art"], ["created_at", "2023-03-29 12:29:43.089281"], ["updated_at", "2023-03-29 12:29:43.089281"]]
+  [1m[36mTRANSACTION (58.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Poetry"], ["created_at", "2023-03-29 12:29:43.159386"], ["updated_at", "2023-03-29 12:29:43.159386"]]
+  [1m[36mTRANSACTION (78.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Graphic Novel"], ["created_at", "2023-03-29 12:29:43.266435"], ["updated_at", "2023-03-29 12:29:43.266435"]]
+  [1m[36mTRANSACTION (79.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Young Adult"], ["created_at", "2023-03-29 12:29:43.371631"], ["updated_at", "2023-03-29 12:29:43.371631"]]
+  [1m[36mTRANSACTION (68.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Children's Literature"], ["created_at", "2023-03-29 12:29:43.462438"], ["updated_at", "2023-03-29 12:29:43.462438"]]
+  [1m[36mTRANSACTION (74.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Business"], ["created_at", "2023-03-29 12:29:43.546538"], ["updated_at", "2023-03-29 12:29:43.546538"]]
+  [1m[36mTRANSACTION (73.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Self-help"], ["created_at", "2023-03-29 12:29:43.645759"], ["updated_at", "2023-03-29 12:29:43.645759"]]
+  [1m[36mTRANSACTION (76.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.6ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science"], ["created_at", "2023-03-29 12:29:43.744195"], ["updated_at", "2023-03-29 12:29:43.744195"]]
+  [1m[36mTRANSACTION (76.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Pride and Prejudice"], ["author", "Jane Austen"], ["description", "When Elizabeth Bennet meets Mr. Darcy, she is repelled by his haughty manner. But gradually, as she discovers his true nature, she begins to respect and admire him--and eventually, to love him."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41FEoMd5E9L._SX324_BO1,204,203,200_.jpg"], ["created_at", "2023-03-29 12:29:43.904879"], ["updated_at", "2023-03-29 12:29:43.904879"]]
+  [1m[36mTRANSACTION (66.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "To Kill a Mockingbird"], ["author", "Harper Lee"], ["description", "The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51IXWZzlgSL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"], ["created_at", "2023-03-29 12:29:43.986281"], ["updated_at", "2023-03-29 12:29:43.986281"]]
+  [1m[36mTRANSACTION (74.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "1984"], ["author", "George Orwell"], ["description", "Written in 1948, 1984 was George Orwell’s chilling prophecy about the future. And while 1984 has come and gone, its message remains..."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41aM4xOZxaL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"], ["created_at", "2023-03-29 12:29:44.074061"], ["updated_at", "2023-03-29 12:29:44.074061"]]
+  [1m[36mTRANSACTION (74.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Great Gatsby"], ["author", "F. Scott Fitzgerald"], ["description", "Jay Gatsby is the man who has everything. But one thing will always be out of his reach...."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41NssxNlPlS._SX331_BO1,204,203,200_.jpg"], ["created_at", "2023-03-29 12:29:44.162608"], ["updated_at", "2023-03-29 12:29:44.162608"]]
+  [1m[36mTRANSACTION (63.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Catcher in the Rye"], ["author", "J.D. Salinger"], ["description", "Holden narrates the story of a couple of days in his sixteen-year-old life, just after he's been expelled from prep school."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/518dVCGFuhL._SX323_BO1,204,203,200_.jpg"], ["created_at", "2023-03-29 12:29:44.241158"], ["updated_at", "2023-03-29 12:29:44.241158"]]
+  [1m[36mTRANSACTION (61.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Harry Potter and the Philosopher's Stone"], ["author", "J.K. Rowling"], ["description", "Harry Potter begins his journey as an orphaned boy wizard to become the hero of a generation."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51xJbFMRsxL.jpg"], ["created_at", "2023-03-29 12:29:44.319232"], ["updated_at", "2023-03-29 12:29:44.319232"]]
+  [1m[36mTRANSACTION (72.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Lord of the Rings"], ["author", "J.R.R. Tolkien"], ["description", "In a sleepy village in Shire, a young hobbit is entrusted with an immense task."], ["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41Gk-Srm7QL.jpg"], ["created_at", "2023-03-29 12:29:44.406460"], ["updated_at", "2023-03-29 12:29:44.406460"]]
+  [1m[36mTRANSACTION (142.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["genre_id", 12], ["created_at", "2023-03-29 12:29:44.613022"], ["updated_at", "2023-03-29 12:29:44.613022"]]
+  [1m[36mTRANSACTION (109.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["genre_id", 13], ["created_at", "2023-03-29 12:29:44.756899"], ["updated_at", "2023-03-29 12:29:44.756899"]]
+  [1m[36mTRANSACTION (103.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 3], ["genre_id", 11], ["created_at", "2023-03-29 12:29:44.889387"], ["updated_at", "2023-03-29 12:29:44.889387"]]
+  [1m[36mTRANSACTION (118.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 4], ["genre_id", 20], ["created_at", "2023-03-29 12:29:45.024661"], ["updated_at", "2023-03-29 12:29:45.024661"]]
+  [1m[36mTRANSACTION (117.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 5], ["genre_id", 8], ["created_at", "2023-03-29 12:29:45.154630"], ["updated_at", "2023-03-29 12:29:45.154630"]]
+  [1m[36mTRANSACTION (109.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 6], ["genre_id", 12], ["created_at", "2023-03-29 12:29:45.292371"], ["updated_at", "2023-03-29 12:29:45.292371"]]
+  [1m[36mTRANSACTION (88.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 7], ["genre_id", 15], ["created_at", "2023-03-29 12:29:45.418713"], ["updated_at", "2023-03-29 12:29:45.418713"]]
+  [1m[36mTRANSACTION (65.7ms)[0m  [1m[36mcommit transaction[0m
