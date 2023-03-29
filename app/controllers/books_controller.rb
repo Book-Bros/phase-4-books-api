@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+wrap_parameters format: []
 
     rescue_from ActiveRecord::RecordInvalid, with: :not_valid_book
    
@@ -15,6 +16,11 @@ class BooksController < ApplicationController
      # POST /books
      def create
        new_book = Book.create!(book_params)
+      genres = params[:genre_id]
+      genres.each do |genre|
+        new_book.book_genres.create({genre_id: genre})
+      end
+
        render json: new_book, status: :created
      end
    

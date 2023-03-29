@@ -1170,3 +1170,310 @@ Processing by BooksController#show as */*
 Completed 422 Unprocessable Entity in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 803)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "textbook"], ["created_at", "2023-03-29 09:58:09.045180"], ["updated_at", "2023-03-29 09:58:09.045180"]]
+  [1m[36mTRANSACTION (91.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tall tale"], ["created_at", "2023-03-29 09:58:09.142152"], ["updated_at", "2023-03-29 09:58:09.142152"]]
+  [1m[36mTRANSACTION (98.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.9ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "fiction narrative"], ["created_at", "2023-03-29 09:58:09.252803"], ["updated_at", "2023-03-29 09:58:09.252803"]]
+  [1m[36mTRANSACTION (99.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "humor"], ["created_at", "2023-03-29 09:58:09.363698"], ["updated_at", "2023-03-29 09:58:09.363698"]]
+  [1m[36mTRANSACTION (98.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "narrative nonfiction"], ["created_at", "2023-03-29 09:58:09.472878"], ["updated_at", "2023-03-29 09:58:09.472878"]]
+  [1m[36mTRANSACTION (91.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "essay"], ["created_at", "2023-03-29 09:58:09.573711"], ["updated_at", "2023-03-29 09:58:09.573711"]]
+  [1m[36mTRANSACTION (98.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "comic/graphic novel"], ["created_at", "2023-03-29 09:58:09.683731"], ["updated_at", "2023-03-29 09:58:09.683731"]]
+  [1m[36mTRANSACTION (89.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "reference book"], ["created_at", "2023-03-29 09:58:09.783794"], ["updated_at", "2023-03-29 09:58:09.783794"]]
+  [1m[36mTRANSACTION (87.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "biography/autobiography"], ["created_at", "2023-03-29 09:58:09.884396"], ["updated_at", "2023-03-29 09:58:09.884396"]]
+  [1m[36mTRANSACTION (96.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "fairy tale"], ["created_at", "2023-03-29 09:58:09.991590"], ["updated_at", "2023-03-29 09:58:09.991590"]]
+  [1m[36mTRANSACTION (84.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "fanfiction"], ["created_at", "2023-03-29 09:58:10.083402"], ["updated_at", "2023-03-29 09:58:10.083402"]]
+  [1m[36mTRANSACTION (101.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "fantasy"], ["created_at", "2023-03-29 09:58:10.194960"], ["updated_at", "2023-03-29 09:58:10.194960"]]
+  [1m[36mTRANSACTION (84.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.9ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "horror"], ["created_at", "2023-03-29 09:58:10.294057"], ["updated_at", "2023-03-29 09:58:10.294057"]]
+  [1m[36mTRANSACTION (129.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "suspense/thriller"], ["created_at", "2023-03-29 09:58:10.439324"], ["updated_at", "2023-03-29 09:58:10.439324"]]
+  [1m[36mTRANSACTION (82.6ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users/login" for 127.0.0.1 at 2023-03-29 13:00:57 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testing", "password"=>"[FILTERED]", "user"=>{"username"=>"testing"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 457ms (Views: 35.9ms | ActiveRecord: 2.0ms | Allocations: 9323)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-03-29 13:02:24 +0300
+Processing by BooksController#create as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>2}
+[31mUnpermitted parameter: :genre_id. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f05d76b0b50>, params: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>2, "controller"=>"books", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Things fall apart"], ["author", "Chinua Achebe"], ["description", "random text..."], ["cover_image", "https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg"], ["created_at", "2023-03-29 10:02:24.879563"], ["updated_at", "2023-03-29 10:02:24.879563"]]
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (117.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.61ms)
+Completed 422 Unprocessable Entity in 176ms (Views: 3.9ms | ActiveRecord: 119.3ms | Allocations: 8796)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-03-29 13:03:10 +0300
+Processing by BooksController#create as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4]}
+[31mUnpermitted parameter: :genre_id. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f05d8208160>, params: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4], "controller"=>"books", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mBook Create (1.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Things fall apart"], ["author", "Chinua Achebe"], ["description", "random text..."], ["cover_image", "https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg"], ["created_at", "2023-03-29 10:03:10.337686"], ["updated_at", "2023-03-29 10:03:10.337686"]]
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (115.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 422 Unprocessable Entity in 305ms (Views: 0.4ms | ActiveRecord: 117.5ms | Allocations: 8141)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-03-29 13:03:57 +0300
+Processing by BooksController#create as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>["2", "3", "4"]}
+[31mUnpermitted parameter: :genre_id. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f05d81b97e0>, params: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>["2", "3", "4"], "controller"=>"books", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Things fall apart"], ["author", "Chinua Achebe"], ["description", "random text..."], ["cover_image", "https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg"], ["created_at", "2023-03-29 10:03:57.070682"], ["updated_at", "2023-03-29 10:03:57.070682"]]
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (102.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.36ms)
+Completed 422 Unprocessable Entity in 114ms (Views: 2.2ms | ActiveRecord: 102.7ms | Allocations: 2401)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-03-29 13:04:18 +0300
+Processing by BooksController#create as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>"[2, 3, 4]"}
+[31mUnpermitted parameter: :genre_id. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f05d817f8d8>, params: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>"[2, 3, 4]", "controller"=>"books", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Things fall apart"], ["author", "Chinua Achebe"], ["description", "random text..."], ["cover_image", "https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg"], ["created_at", "2023-03-29 10:04:18.829307"], ["updated_at", "2023-03-29 10:04:18.829307"]]
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (105.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 422 Unprocessable Entity in 115ms (Views: 0.7ms | ActiveRecord: 106.5ms | Allocations: 2351)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-03-29 14:34:35 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#create as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4]}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.24ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 30ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 1144)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-29 14:35:41 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testing", "password"=>"[FILTERED]", "user"=>{"username"=>"testing"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 507ms (Views: 0.5ms | ActiveRecord: 3.6ms | Allocations: 7971)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-03-29 14:36:01 +0300
+Processing by BooksController#create as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4]}
+[31mUnpermitted parameter: :genre_id. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f73cc4d5840>, params: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4], "controller"=>"books", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Things fall apart"], ["author", "Chinua Achebe"], ["description", "random text..."], ["cover_image", "https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg"], ["created_at", "2023-03-29 11:36:01.489615"], ["updated_at", "2023-03-29 11:36:01.489615"]]
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (77.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 422 Unprocessable Entity in 315ms (Views: 1.4ms | ActiveRecord: 83.2ms | Allocations: 13555)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-03-29 14:37:16 +0300
+Processing by BooksController#create as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4]}
+[31mUnpermitted parameter: :genre_id. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f73ca7f2638>, params: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4], "controller"=>"books", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Things fall apart"], ["author", "Chinua Achebe"], ["description", "random text..."], ["cover_image", "https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg"], ["created_at", "2023-03-29 11:37:16.617000"], ["updated_at", "2023-03-29 11:37:16.617000"]]
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (108.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:21:in `block in create'
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:21:in `block in create'
+  [1m[36mBookGenre Create (0.9ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 8], ["genre_id", 2], ["created_at", "2023-03-29 11:37:16.908195"], ["updated_at", "2023-03-29 11:37:16.908195"]]
+  ↳ app/controllers/books_controller.rb:21:in `block in create'
+  [1m[36mTRANSACTION (78.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:21:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:21:in `block in create'
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:21:in `block in create'
+  [1m[36mBookGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 8], ["genre_id", 3], ["created_at", "2023-03-29 11:37:17.001731"], ["updated_at", "2023-03-29 11:37:17.001731"]]
+  ↳ app/controllers/books_controller.rb:21:in `block in create'
+  [1m[36mTRANSACTION (78.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:21:in `block in create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:21:in `block in create'
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:21:in `block in create'
+  [1m[36mBookGenre Create (0.9ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 8], ["genre_id", 4], ["created_at", "2023-03-29 11:37:17.100137"], ["updated_at", "2023-03-29 11:37:17.100137"]]
+  ↳ app/controllers/books_controller.rb:21:in `block in create'
+  [1m[36mTRANSACTION (86.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:21:in `block in create'
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 201 Created in 721ms (Views: 131.9ms | ActiveRecord: 360.0ms | Allocations: 24755)
+
+
+Started GET "/books/8" for 127.0.0.1 at 2023-03-29 14:37:43 +0300
+Processing by BooksController#show as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4], "id"=>"8"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:42:in `book'
+[active_model_serializers]   [1m[36mReview Load (1.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 8]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "book_genres" ON "genres"."id" = "book_genres"."genre_id" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 8]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:13:in `show'
+[active_model_serializers] No serializer found for resource: #<Genre id: 2, name: "tall tale", created_at: "2023-03-29 09:58:09.142152000 +0000", updated_at: "2023-03-29 09:58:09.142152000 +0000">
+[active_model_serializers] Rendered SingleBookSerializer with ActiveModelSerializers::Adapter::Attributes (69.78ms)
+Completed 200 OK in 107ms (Views: 67.7ms | ActiveRecord: 3.4ms | Allocations: 8326)
+
+
+Started DELETE "/books/2" for 127.0.0.1 at 2023-03-29 14:39:24 +0300
+Processing by BooksController#destroy as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4], "id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:42:in `book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mBookGenre Load (0.1ms)[0m  [1m[34mSELECT "book_genres".* FROM "book_genres" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (99.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 204 No Content in 120ms (Views: 3.3ms | ActiveRecord: 100.2ms | Allocations: 4278)
+
+
+Started DELETE "/books/3" for 127.0.0.1 at 2023-03-29 14:39:30 +0300
+Processing by BooksController#destroy as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4], "id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:42:in `book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 3]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mBookGenre Load (0.1ms)[0m  [1m[34mSELECT "book_genres".* FROM "book_genres" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 3]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mBook Destroy (0.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (99.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 204 No Content in 138ms (Views: 1.1ms | ActiveRecord: 100.0ms | Allocations: 3825)
+
+
+Started DELETE "/books/4" for 127.0.0.1 at 2023-03-29 14:39:32 +0300
+Processing by BooksController#destroy as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4], "id"=>"4"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:42:in `book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 4]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mBookGenre Load (0.1ms)[0m  [1m[34mSELECT "book_genres".* FROM "book_genres" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 4]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (89.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 204 No Content in 103ms (Views: 1.3ms | ActiveRecord: 89.9ms | Allocations: 3843)
+
+
+Started DELETE "/books/5" for 127.0.0.1 at 2023-03-29 14:39:35 +0300
+Processing by BooksController#destroy as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4], "id"=>"5"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:42:in `book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 5]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mBookGenre Load (0.1ms)[0m  [1m[34mSELECT "book_genres".* FROM "book_genres" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 5]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mBook Destroy (1.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (96.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 204 No Content in 120ms (Views: 0.7ms | ActiveRecord: 98.0ms | Allocations: 3824)
+
+
+Started DELETE "/books/6" for 127.0.0.1 at 2023-03-29 14:39:38 +0300
+Processing by BooksController#destroy as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4], "id"=>"6"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:42:in `book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 6]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mBookGenre Load (0.1ms)[0m  [1m[34mSELECT "book_genres".* FROM "book_genres" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 6]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (74.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 204 No Content in 88ms (Views: 1.5ms | ActiveRecord: 75.2ms | Allocations: 3823)
+
+
+Started DELETE "/books/7" for 127.0.0.1 at 2023-03-29 14:39:40 +0300
+Processing by BooksController#destroy as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"random text...", "genre_id"=>[2, 3, 4], "id"=>"7"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:42:in `book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 7]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mBookGenre Load (0.1ms)[0m  [1m[34mSELECT "book_genres".* FROM "book_genres" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 7]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (87.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:35:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 204 No Content in 101ms (Views: 2.0ms | ActiveRecord: 87.9ms | Allocations: 3830)
+
+
