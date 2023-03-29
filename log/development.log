@@ -50,3 +50,111 @@ Migrating to CreateGenres (20230328080950)
   [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-28 08:10:05.476042"], ["updated_at", "2023-03-28 08:10:05.476042"]]
   [1m[36mTRANSACTION (81.4ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/books" for 127.0.0.1 at 2023-03-28 15:48:09 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/shuaib/rails/phase-4-books-api/app/controllers/application_controller.rb:12: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+...: invalid.errors}, status: :400
+...                            ^~~
+):
+  
+app/controllers/application_controller.rb:12: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/application_controller.rb:12: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/books_controller.rb:1:in `<main>'
+Started POST "/books" for 127.0.0.1 at 2023-03-28 15:49:17 +0300
+Processing by BooksController#create as */*
+  Parameters: {"title"=>"Think and Row Rich", "author"=>"Napoleon Hill", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg", "book"=>{"title"=>"Think and Row Rich", "author"=>"Napoleon Hill", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg"}}
+[31mUnpermitted parameter: :book. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007fe9c101ee58>, params: {"title"=>"Think and Row Rich", "author"=>"Napoleon Hill", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg", "controller"=>"books", "action"=>"create", "book"=>{"title"=>"Think and Row Rich", "author"=>"Napoleon Hill", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Think and Row Rich"], ["author", "Napoleon Hill"], ["description", "Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met."], ["cover_image", "https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg"], ["created_at", "2023-03-28 12:49:17.892145"], ["updated_at", "2023-03-28 12:49:17.892145"]]
+  ↳ app/controllers/books_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (74.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:18:in `create'
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (0.48ms)
+Completed 201 Created in 185ms (Views: 36.2ms | ActiveRecord: 76.8ms | Allocations: 42129)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-03-28 15:49:58 +0300
+Processing by BooksController#index as */*
+  Parameters: {"title"=>"Think and Row Rich", "author"=>"Napoleon Hill", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg", "book"=>{"title"=>"Think and Row Rich", "author"=>"Napoleon Hill", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg"}}
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (6.08ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1475)
+
+
+  
+NoMethodError (undefined method `model_name' for BookSerializer:Class
+Did you mean?  module_parent):
+  
+app/controllers/books_controller.rb:8:in `index'
+Started GET "/books/1" for 127.0.0.1 at 2023-03-28 15:50:12 +0300
+Processing by BooksController#show as */*
+  Parameters: {"title"=>"Think and Row Rich", "author"=>"Napoleon Hill", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg", "id"=>"1", "book"=>{"title"=>"Think and Row Rich", "author"=>"Napoleon Hill", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg"}}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:37:in `book'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "book_genres" ON "genres"."id" = "book_genres"."genre_id" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:13:in `show'
+[active_model_serializers] Rendered SingleBookSerializer with ActiveModelSerializers::Adapter::Attributes (101.6ms)
+Completed 200 OK in 123ms (Views: 99.7ms | ActiveRecord: 2.7ms | Allocations: 24566)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-03-28 15:51:54 +0300
+Processing by BooksController#index as */*
+  Parameters: {"title"=>"Think and Row Rich", "author"=>"Napoleon Hill", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg", "book"=>{"title"=>"Think and Row Rich", "author"=>"Napoleon Hill", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg"}}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 1.2ms | Allocations: 2698)
+
+
+Started PUT "/books/1" for 127.0.0.1 at 2023-03-28 15:52:56 +0300
+Processing by BooksController#update as */*
+  Parameters: {"title"=>"Think like a man", "author"=>"idris elba", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg", "id"=>"1", "book"=>{"title"=>"Think like a man", "author"=>"idris elba", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg"}}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:36:in `book'
+[31mUnpermitted parameters: :id, :book. Context: { controller: BooksController, action: update, request: #<ActionDispatch::Request:0x00007fe9c8350de0>, params: {"title"=>"Think like a man", "author"=>"idris elba", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg", "controller"=>"books", "action"=>"update", "id"=>"1", "book"=>{"title"=>"Think like a man", "author"=>"idris elba", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:23:in `update'
+  [1m[36mBook Update (0.5ms)[0m  [1m[33mUPDATE "books" SET "title" = ?, "author" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["title", "Think like a man"], ["author", "idris elba"], ["updated_at", "2023-03-28 12:52:56.015282"], ["id", 1]]
+  ↳ app/controllers/books_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (139.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:23:in `update'
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:36:in `book'
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+Completed 200 OK in 157ms (Views: 1.9ms | ActiveRecord: 140.7ms | Allocations: 3256)
+
+
+Started PUT "/books/1" for 127.0.0.1 at 2023-03-28 15:53:31 +0300
+Processing by BooksController#update as */*
+  Parameters: {"title"=>"Think like a man", "author"=>"idris elba", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg", "id"=>"1", "book"=>{"title"=>"Think like a man", "author"=>"idris elba", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg"}}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:36:in `book'
+[31mUnpermitted parameters: :id, :book. Context: { controller: BooksController, action: update, request: #<ActionDispatch::Request:0x00007fe9c42c5a00>, params: {"title"=>"Think like a man", "author"=>"idris elba", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg", "controller"=>"books", "action"=>"update", "id"=>"1", "book"=>{"title"=>"Think like a man", "author"=>"idris elba", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg"}} }[0m
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:36:in `book'
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 11ms (Views: 2.6ms | ActiveRecord: 2.5ms | Allocations: 3448)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2023-03-28 15:54:00 +0300
+Processing by BooksController#destroy as */*
+  Parameters: {"title"=>"Think like a man", "author"=>"idris elba", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg", "id"=>"1", "book"=>{"title"=>"Think like a man", "author"=>"idris elba", "description"=>"Think and Grow Rich is a book written by Napoleon Hill released in 1937 and promoted as a personal development and self-improvement book. He claimed to be inspired by a suggestion from business magnate and later-philanthropist Andrew Carnegie. However there is no evidence that the two ever met.", "cover_image"=>"https://nuriakenya.com/wp-content/uploads/2020/11/think-and-grow-rich.jpg"}}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:36:in `book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+  [1m[36mBookGenre Load (0.2ms)[0m  [1m[34mSELECT "book_genres".* FROM "book_genres" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+  [1m[36mBook Destroy (0.4ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (86.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 204 No Content in 128ms (Views: 19.0ms | ActiveRecord: 88.4ms | Allocations: 9982)
+
+
