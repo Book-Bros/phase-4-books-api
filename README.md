@@ -1,31 +1,53 @@
 # Books-Review
-
 -----
 
 - This is the API backend for the books-review project .The Front-End can be found at [Front-End](https://github.com/Book-Bros/phase-4-books-client)<br/>
 ![love](http://ForTheBadge.com/images/badges/built-with-love.svg)
 
-## Description
-- This backend allows the the react front-end to access the following endpoints:
-    
 ## Technologies-used
    ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)   ![render](https://img.shields.io/badge/Render-430091?style=for-the-badge&logo=render&logoColor=white)     ![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)   ![](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
    ![Ruby](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)    ![Sqlite](https://img.shields.io/badge/SQLite3-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
    ![mark-down](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
    ![stack](https://aleen42.github.io/badges/src/stackoverflow.svg)
+## Description
+- This backend allows the the react front-end to access the following endpoints in a **RESTful** mode:
+  ```
+    - Users Login/Sign-up
+    - Users_checklogin
+    - Genre/genres
+    - Book/books
+    - Review/review
+    ```
 
+- The actions that the user can make are:
+    ```
+    - Create a user account and add a profile to it.
+    - Login to a his account.
+    - He/she can create a new book and assing it to a specific genre.
+    - He/she can review the books of other users in the app.
+    ```
 
 
 ## Database
 - Below is a sample diagram of the database tables we used.
 
+- The database below contains the following tables including `books`, `genres`, `book_genres`, `users`, and `reviews`.
+
 <img src="./images/db.png" alt="database tables" />
 
-## preriquisites
-1. **Sqlite3**
-2. **Text-editor** (*Vscode is preffered*)
-3. **ruby** >=2.5
-4. **Error handling skills**
+
+- The ``books`` table contains information about `books`, including a title, author, description, and cover image.
+- The `genres` table contains a list of possible `genres` for `books`. The `book_genres` table is a join table that associates `books` with `genres` through their ids.
+- The `users` table contains information about `users`, including their username, email, password digest, and profile image.
+- Finally, the `reviews` table is a table that stores information about `reviews` written by `users` for `books` they have read, including a title, content, user id, and book id.
+
+## Prerequisites
+- To start this project one must have the following:
+    1. **Sqlite3**
+    2. **Text-editor** (**VSCode** is :sunglasses:)
+    3. **ruby** >=2.5
+    4. **Rails**
+    4. **Patience**
 
 ## Installation
 1. Clone this repository
@@ -56,8 +78,8 @@
     ```
 
 
-## contributers
-![](http://ForTheBadge.com/images/badges/built-by-developers.svg)
+## Contributers
+ ![](http://ForTheBadge.com/images/badges/built-by-developers.svg)
 
 1. [Stephen-Nene](https://github.com/Stephen-nene)
 2. [Sammy-CK](https://github.com/Sammy-CK)
@@ -66,6 +88,6 @@
 
 
 ## license
-- MIT License
+- [MIT License](./LICENSE.md)
 ### **Copyright**
    - Book-Bros (c) 2023

@@ -671,3 +671,519 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 13ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4951)
 
 
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230328080512)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "profile_image" varchar DEFAULT 'https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328080512"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20230328080735)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "content" text NOT NULL, "user_id" integer, "book_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328080735"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20230328080819)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "author" varchar NOT NULL, "description" text, "cover_image" varchar DEFAULT 'https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328080819"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBookGenres (20230328080913)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "book_genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "genre_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328080913"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateGenres (20230328080950)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328080950"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-29 10:03:37.617160"], ["updated_at", "2023-03-29 10:03:37.617160"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Great Gatsby"], ["author", "F. Scott Fitzgerald"], ["description", "A classic novel about the excesses and moral decay of the wealthy in the 1920s."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 10:03:43.574149"], ["updated_at", "2023-03-29 10:03:43.574149"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "To Kill a Mockingbird"], ["author", "Harper Lee"], ["description", "A story about racial injustice and the loss of innocence in a small town."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 10:03:43.578766"], ["updated_at", "2023-03-29 10:03:43.578766"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Brave New World"], ["author", "Aldous Huxley"], ["description", "A dystopian novel about a future society where people are genetically engineered and conditioned to be content with their lives."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 10:03:43.582595"], ["updated_at", "2023-03-29 10:03:43.582595"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fiction"], ["created_at", "2023-03-29 10:03:43.594149"], ["updated_at", "2023-03-29 10:03:43.594149"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Classics"], ["created_at", "2023-03-29 10:03:43.598141"], ["updated_at", "2023-03-29 10:03:43.598141"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science Fiction"], ["created_at", "2023-03-29 10:03:43.602065"], ["updated_at", "2023-03-29 10:03:43.602065"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["genre_id", 2], ["created_at", "2023-03-29 10:03:43.636613"], ["updated_at", "2023-03-29 10:03:43.636613"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["genre_id", 1], ["created_at", "2023-03-29 10:03:43.642888"], ["updated_at", "2023-03-29 10:03:43.642888"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 3], ["genre_id", 3], ["created_at", "2023-03-29 10:03:43.648879"], ["updated_at", "2023-03-29 10:03:43.648879"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "john_doe"], ["email", "johndoe@example.com"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 10:03:43.840183"], ["updated_at", "2023-03-29 10:03:43.840183"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "jane_smith"], ["email", "janesmith@example.com"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 10:03:44.028011"], ["updated_at", "2023-03-29 10:03:44.028011"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Great book!"], ["content", "I loved this book so much. The characters were complex and interesting, and the story was gripping from start to finish."], ["user_id", 1], ["book_id", 1], ["created_at", "2023-03-29 10:03:44.048824"], ["updated_at", "2023-03-29 10:03:44.048824"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Amazing!"], ["content", "This is one of the best books I've ever read. The writing is beautiful and poignant, and the themes are so relevant today."], ["user_id", 2], ["book_id", 2], ["created_at", "2023-03-29 10:03:44.054892"], ["updated_at", "2023-03-29 10:03:44.054892"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230328080512)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "profile_image" varchar DEFAULT 'https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328080512"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20230328080735)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "content" text NOT NULL, "user_id" integer, "book_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328080735"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20230328080819)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "author" varchar NOT NULL, "description" text, "cover_image" varchar DEFAULT 'https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg', "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328080819"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBookGenres (20230328080913)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "book_genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "genre_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328080913"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateGenres (20230328080950)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328080950"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-29 10:09:25.429720"], ["updated_at", "2023-03-29 10:09:25.429720"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "A Farewell to Arms"], ["author", "Lowell Homenick DO"], ["description", "Nisi quia voluptas. Aut consectetur sunt. Temporibus ratione et."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 10:13:04.149340"], ["updated_at", "2023-03-29 10:13:04.149340"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Parliament of Man"], ["author", "Andera Jaskolski"], ["description", "Sunt eligendi autem. Neque porro quam. Consectetur necessitatibus animi."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 10:13:04.159391"], ["updated_at", "2023-03-29 10:13:04.159391"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Proper Study"], ["author", "Brian Kemmer"], ["description", "Tempore voluptas sed. Sit fugit id. Rem veniam nulla."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 10:13:04.163849"], ["updated_at", "2023-03-29 10:13:04.163849"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Consider Phlebas"], ["author", "Jarvis Mertz"], ["description", "Temporibus sit qui. Voluptas ut delectus. Consectetur a culpa."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 10:13:04.168198"], ["updated_at", "2023-03-29 10:13:04.168198"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Of Mice and Men"], ["author", "Andria Moore"], ["description", "Eum reprehenderit qui. Non repudiandae neque. Voluptatem aut consequatur."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 10:13:04.172625"], ["updated_at", "2023-03-29 10:13:04.172625"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Brandy of the Damned"], ["author", "Adrian Bins MD"], ["description", "Quos quaerat qui. Doloremque dolores architecto. Fugiat eaque modi."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 10:13:04.177045"], ["updated_at", "2023-03-29 10:13:04.177045"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Far From the Madding Crowd"], ["author", "Dr. Sang Dickens"], ["description", "Quod beatae dolor. Molestias quia dignissimos. Qui cumque nisi."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 10:13:04.181611"], ["updated_at", "2023-03-29 10:13:04.181611"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Those Barren Leaves, Thrones, Dominations"], ["author", "Dr. Tommy Streich"], ["description", "Natus error aliquam. Et voluptates sapiente. Quo corporis est."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 10:13:04.186016"], ["updated_at", "2023-03-29 10:13:04.186016"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "A Confederacy of Dunces"], ["author", "Zane Roob"], ["description", "Aliquam labore quasi. Libero aperiam iusto. Incidunt autem animi."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 10:13:04.190380"], ["updated_at", "2023-03-29 10:13:04.190380"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "A Monstrous Regiment of Women"], ["author", "Floyd Runte"], ["description", "Ut assumenda voluptatibus. Ducimus odit et. Libero rerum dignissimos."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 10:13:04.194749"], ["updated_at", "2023-03-29 10:13:04.194749"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fairy tale"], ["created_at", "2023-03-29 10:13:04.205028"], ["updated_at", "2023-03-29 10:13:04.205028"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fiction narrative"], ["created_at", "2023-03-29 10:13:04.209124"], ["updated_at", "2023-03-29 10:13:04.209124"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Reference book"], ["created_at", "2023-03-29 10:13:04.212906"], ["updated_at", "2023-03-29 10:13:04.212906"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Short story"], ["created_at", "2023-03-29 10:13:04.216757"], ["updated_at", "2023-03-29 10:13:04.216757"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science fiction"], ["created_at", "2023-03-29 10:13:04.220515"], ["updated_at", "2023-03-29 10:13:04.220515"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["genre_id", 2], ["created_at", "2023-03-29 10:13:04.236656"], ["updated_at", "2023-03-29 10:13:04.236656"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["genre_id", 1], ["created_at", "2023-03-29 10:13:04.243224"], ["updated_at", "2023-03-29 10:13:04.243224"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 3], ["genre_id", 1], ["created_at", "2023-03-29 10:13:04.249957"], ["updated_at", "2023-03-29 10:13:04.249957"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 3], ["genre_id", 1], ["created_at", "2023-03-29 10:13:04.267331"], ["updated_at", "2023-03-29 10:13:04.267331"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 3], ["genre_id", 2], ["created_at", "2023-03-29 10:13:04.273772"], ["updated_at", "2023-03-29 10:13:04.273772"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 4], ["genre_id", 5], ["created_at", "2023-03-29 10:13:04.280153"], ["updated_at", "2023-03-29 10:13:04.280153"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 4], ["genre_id", 2], ["created_at", "2023-03-29 10:13:04.288146"], ["updated_at", "2023-03-29 10:13:04.288146"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 4], ["genre_id", 3], ["created_at", "2023-03-29 10:13:04.297190"], ["updated_at", "2023-03-29 10:13:04.297190"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 5], ["genre_id", 3], ["created_at", "2023-03-29 10:13:04.303516"], ["updated_at", "2023-03-29 10:13:04.303516"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 5], ["genre_id", 3], ["created_at", "2023-03-29 10:13:04.310311"], ["updated_at", "2023-03-29 10:13:04.310311"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 5], ["genre_id", 4], ["created_at", "2023-03-29 10:13:04.316479"], ["updated_at", "2023-03-29 10:13:04.316479"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 6], ["genre_id", 2], ["created_at", "2023-03-29 10:13:04.322685"], ["updated_at", "2023-03-29 10:13:04.322685"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 6], ["genre_id", 4], ["created_at", "2023-03-29 10:13:04.329513"], ["updated_at", "2023-03-29 10:13:04.329513"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 6], ["genre_id", 2], ["created_at", "2023-03-29 10:13:04.335909"], ["updated_at", "2023-03-29 10:13:04.335909"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 7], ["genre_id", 1], ["created_at", "2023-03-29 10:13:04.343455"], ["updated_at", "2023-03-29 10:13:04.343455"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 7], ["genre_id", 4], ["created_at", "2023-03-29 10:13:04.350077"], ["updated_at", "2023-03-29 10:13:04.350077"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 7], ["genre_id", 2], ["created_at", "2023-03-29 10:13:04.357531"], ["updated_at", "2023-03-29 10:13:04.357531"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 8], ["genre_id", 5], ["created_at", "2023-03-29 10:13:04.363892"], ["updated_at", "2023-03-29 10:13:04.363892"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 8], ["genre_id", 1], ["created_at", "2023-03-29 10:13:04.370128"], ["updated_at", "2023-03-29 10:13:04.370128"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 9], ["genre_id", 2], ["created_at", "2023-03-29 10:13:04.377417"], ["updated_at", "2023-03-29 10:13:04.377417"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 10], ["genre_id", 2], ["created_at", "2023-03-29 10:13:04.384972"], ["updated_at", "2023-03-29 10:13:04.384972"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 10], ["genre_id", 4], ["created_at", "2023-03-29 10:13:04.392114"], ["updated_at", "2023-03-29 10:13:04.392114"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "book_genres" ("book_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 10], ["genre_id", 1], ["created_at", "2023-03-29 10:13:04.398497"], ["updated_at", "2023-03-29 10:13:04.398497"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "napoleon"], ["email", "lillie@satterfield-purdy.info"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 10:13:04.589075"], ["updated_at", "2023-03-29 10:13:04.589075"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "ma"], ["email", "rhonda@wintheiser.org"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 10:13:04.777829"], ["updated_at", "2023-03-29 10:13:04.777829"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "darryl"], ["email", "filiberto.larkin@hartmann.com"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 10:13:04.965380"], ["updated_at", "2023-03-29 10:13:04.965380"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "tyler"], ["email", "qiana@thiel-beier.name"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 10:13:05.153194"], ["updated_at", "2023-03-29 10:13:05.153194"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "stephany"], ["email", "santo@gerhold-wilderman.co"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 10:13:05.340162"], ["updated_at", "2023-03-29 10:13:05.340162"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "akiko_zulauf"], ["email", "thu_dicki@upton.co"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 10:13:05.528275"], ["updated_at", "2023-03-29 10:13:05.528275"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "neal"], ["email", "christi@metz.com"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 10:13:05.716384"], ["updated_at", "2023-03-29 10:13:05.716384"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "lyndsey"], ["email", "shaquana@reichel.info"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 10:13:05.903633"], ["updated_at", "2023-03-29 10:13:05.903633"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "hisako_douglas"], ["email", "jamie@murphy.net"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 10:13:06.094029"], ["updated_at", "2023-03-29 10:13:06.094029"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "mindy"], ["email", "jeanmarie.altenwerth@wilderman.com"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 10:13:06.282770"], ["updated_at", "2023-03-29 10:13:06.282770"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Id enim eius fugit."], ["content", "Officia quisquam sed. Odit hic sequi. Sint quia labore.<br>Veritatis quasi architecto. Est ipsam expedita. Praesentium occaecati optio.<br>In reiciendis culpa. Minus repudiandae dolorum. Eligendi consequuntur est."], ["user_id", 1], ["book_id", 6], ["created_at", "2023-03-29 10:13:06.305313"], ["updated_at", "2023-03-29 10:13:06.305313"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Non est quia odit."], ["content", "Voluptate nobis ipsa. Necessitatibus sint earum. Assumenda quibusdam pariatur.<br>Officia esse ab. Eos voluptatem iste. Mollitia accusantium qui.<br>Et officia magnam. Voluptatibus esse consequuntur. Molestias nihil doloribus."], ["user_id", 1], ["book_id", 8], ["created_at", "2023-03-29 10:13:06.313404"], ["updated_at", "2023-03-29 10:13:06.313404"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Voluptas earum iure magnam."], ["content", "Quibusdam tempore est. At repellendus ipsa. Aut error nemo.<br>Laudantium vel sed. Enim tempore culpa. Soluta ut explicabo.<br>Ducimus dolorum ut. Inventore rerum praesentium. Fuga quam dolore."], ["user_id", 1], ["book_id", 4], ["created_at", "2023-03-29 10:13:06.321110"], ["updated_at", "2023-03-29 10:13:06.321110"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Debitis iste fuga inventore."], ["content", "Autem fugiat mollitia. Accusantium ut et. Rem quia omnis.<br>Commodi dolore quo. Et eveniet maiores. Eius dolor eligendi.<br>Et tempore aperiam. Et ad possimus. Autem odio modi."], ["user_id", 1], ["book_id", 5], ["created_at", "2023-03-29 10:13:06.329123"], ["updated_at", "2023-03-29 10:13:06.329123"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Amet odio dolores voluptatem."], ["content", "Occaecati et excepturi. Cupiditate quasi totam. Voluptatem qui quo.<br>Nesciunt qui facilis. Quaerat inventore in. Voluptates dolorem placeat.<br>Officiis aut corporis. Iste ut voluptatem. Ipsum porro dolor."], ["user_id", 1], ["book_id", 3], ["created_at", "2023-03-29 10:13:06.336576"], ["updated_at", "2023-03-29 10:13:06.336576"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Assumenda inventore asperiores quo."], ["content", "Autem tenetur est. Quisquam aut est. Facere omnis excepturi.<br>Corrupti pariatur sit. Rerum incidunt quis. Amet architecto ullam.<br>Maiores voluptas vel. Omnis aspernatur accusamus. Porro itaque sit."], ["user_id", 2], ["book_id", 1], ["created_at", "2023-03-29 10:13:06.344160"], ["updated_at", "2023-03-29 10:13:06.344160"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Eveniet sit enim vel."], ["content", "Numquam ut animi. Ut eos magnam. Iure atque iste.<br>Autem tempora praesentium. Atque dolorem culpa. Qui veritatis recusandae.<br>Eos possimus non. Ad perspiciatis animi. Quibusdam officiis voluptatum."], ["user_id", 2], ["book_id", 3], ["created_at", "2023-03-29 10:13:06.351661"], ["updated_at", "2023-03-29 10:13:06.351661"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Dolor saepe voluptas et."], ["content", "Modi quaerat facere. Molestiae libero quia. Ut sunt corporis.<br>Quis tempora error. Magni in provident. Natus dignissimos recusandae.<br>Asperiores voluptate tempora. Recusandae nostrum beatae. Voluptatum qui officiis."], ["user_id", 3], ["book_id", 1], ["created_at", "2023-03-29 10:13:06.359261"], ["updated_at", "2023-03-29 10:13:06.359261"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Qui eveniet placeat vel."], ["content", "Ipsum autem in. Veritatis deleniti eaque. Quisquam incidunt accusantium.<br>Dolore voluptas aut. Quod sed omnis. Tempora et qui.<br>Totam ducimus architecto. In esse illum. Adipisci mollitia saepe."], ["user_id", 3], ["book_id", 7], ["created_at", "2023-03-29 10:13:06.366930"], ["updated_at", "2023-03-29 10:13:06.366930"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Et repellat blanditiis odit."], ["content", "Laborum quo quod. Est libero eius. Delectus eius tenetur.<br>Accusantium doloremque hic. Minus debitis perferendis. Quia voluptates et.<br>Molestiae autem dolor. Autem enim quasi. Aut quae tenetur."], ["user_id", 4], ["book_id", 1], ["created_at", "2023-03-29 10:13:06.374435"], ["updated_at", "2023-03-29 10:13:06.374435"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Incidunt cum cupiditate voluptas."], ["content", "Quia porro temporibus. Rerum exercitationem sunt. Ut qui exercitationem.<br>Voluptatem nam quae. Voluptatibus rem aliquid. Quas et molestiae.<br>Suscipit omnis dicta. Magni sed perspiciatis. Aut quo libero."], ["user_id", 4], ["book_id", 1], ["created_at", "2023-03-29 10:13:06.381870"], ["updated_at", "2023-03-29 10:13:06.381870"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nam impedit et sint."], ["content", "Enim placeat amet. Qui neque dolores. Atque nostrum voluptas.<br>Omnis est delectus. Animi ducimus ut. In quia voluptatibus.<br>Autem sint labore. Officia assumenda et. Unde quia asperiores."], ["user_id", 4], ["book_id", 3], ["created_at", "2023-03-29 10:13:06.389332"], ["updated_at", "2023-03-29 10:13:06.389332"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nihil dolorum tempore esse."], ["content", "Sit est beatae. Rerum voluptas et. Repudiandae animi provident.<br>Sit voluptate dolores. Perspiciatis similique nihil. Vero sunt cupiditate.<br>Libero recusandae doloribus. Nam reiciendis fugit. Modi voluptates quia."], ["user_id", 5], ["book_id", 3], ["created_at", "2023-03-29 10:13:06.396871"], ["updated_at", "2023-03-29 10:13:06.396871"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Dolor labore voluptatem et."], ["content", "Nihil qui magnam. Qui suscipit quis. Ullam ut consectetur.<br>Enim veritatis voluptatem. Maxime fugit numquam. Dicta ipsam consectetur.<br>Eos mollitia alias. Magni et necessitatibus. Sint quas eligendi."], ["user_id", 5], ["book_id", 1], ["created_at", "2023-03-29 10:13:06.405057"], ["updated_at", "2023-03-29 10:13:06.405057"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Est qui harum porro."], ["content", "Qui doloremque eaque. Itaque est delectus. Consectetur amet illum.<br>Autem possimus ut. Deleniti nemo placeat. Mollitia quidem natus.<br>Sint aut non. Et occaecati dolore. Sed sit occaecati."], ["user_id", 5], ["book_id", 2], ["created_at", "2023-03-29 10:13:06.413738"], ["updated_at", "2023-03-29 10:13:06.413738"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Asperiores fugit sint voluptas."], ["content", "Magni velit vitae. Autem quia iusto. Et culpa fuga.<br>Omnis iusto voluptas. Cupiditate deleniti voluptas. Officia repellat reprehenderit.<br>Magni praesentium quibusdam. Sint reprehenderit odit. Beatae aut adipisci."], ["user_id", 5], ["book_id", 10], ["created_at", "2023-03-29 10:13:06.421286"], ["updated_at", "2023-03-29 10:13:06.421286"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Unde quasi aliquam qui."], ["content", "Dolor rerum et. Consequuntur deleniti provident. Quaerat eius qui.<br>Pariatur voluptatem quasi. Ut iure nobis. Voluptas nostrum quia.<br>Nihil exercitationem rem. A aliquam est. Autem et eos."], ["user_id", 6], ["book_id", 5], ["created_at", "2023-03-29 10:13:06.428794"], ["updated_at", "2023-03-29 10:13:06.428794"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Impedit ut dolore temporibus."], ["content", "Rerum velit quo. Ipsa modi dolor. Rerum unde quis.<br>Nesciunt fuga voluptatibus. Sit aliquam id. Consectetur et ducimus.<br>Mollitia dignissimos facilis. Possimus maiores odio. Cupiditate exercitationem accusantium."], ["user_id", 7], ["book_id", 10], ["created_at", "2023-03-29 10:13:06.436333"], ["updated_at", "2023-03-29 10:13:06.436333"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Alias est beatae est."], ["content", "Recusandae asperiores eum. Animi in fuga. Aliquam aspernatur quo.<br>Officiis accusamus expedita. Architecto unde laudantium. Repellat quis sit.<br>Earum culpa alias. Ut eos reprehenderit. Vitae hic quo."], ["user_id", 7], ["book_id", 1], ["created_at", "2023-03-29 10:13:06.444367"], ["updated_at", "2023-03-29 10:13:06.444367"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Atque rem maxime ut."], ["content", "Iure quasi earum. Nobis et minima. Dolores porro sit.<br>Quod provident ut. Voluptatem non soluta. Et sint laudantium.<br>Ut fugiat quidem. Vel culpa velit. Itaque impedit provident."], ["user_id", 8], ["book_id", 4], ["created_at", "2023-03-29 10:13:06.452031"], ["updated_at", "2023-03-29 10:13:06.452031"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Soluta vero nihil et."], ["content", "Sed velit neque. Id tempore mollitia. Optio eum qui.<br>Error provident qui. Rerum cumque eligendi. Dignissimos provident autem.<br>Beatae impedit ut. Qui tenetur suscipit. Corporis voluptatem temporibus."], ["user_id", 8], ["book_id", 4], ["created_at", "2023-03-29 10:13:06.459482"], ["updated_at", "2023-03-29 10:13:06.459482"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Alias similique sapiente illum."], ["content", "Et blanditiis natus. Dolor amet quae. Totam accusamus repellat.<br>Quibusdam aut nemo. Aut architecto nobis. Quam ut earum.<br>Et esse dicta. Veritatis est est. Eum est dolorem."], ["user_id", 8], ["book_id", 5], ["created_at", "2023-03-29 10:13:06.466927"], ["updated_at", "2023-03-29 10:13:06.466927"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Quia veritatis saepe in."], ["content", "Quaerat ea quod. Suscipit voluptatibus occaecati. Non error nisi.<br>Saepe iure repudiandae. Explicabo iste aliquid. Minima rerum commodi.<br>Perspiciatis omnis maxime. Maxime et dolor. Alias itaque cumque."], ["user_id", 8], ["book_id", 8], ["created_at", "2023-03-29 10:13:06.474300"], ["updated_at", "2023-03-29 10:13:06.474300"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Qui cupiditate velit quas."], ["content", "Quibusdam eos quas. Quae laboriosam excepturi. Nihil possimus at.<br>Illo autem magni. Aut ipsa ut. Facilis sunt qui.<br>Fugiat voluptas sint. Repellat facere modi. Corrupti molestiae laboriosam."], ["user_id", 8], ["book_id", 6], ["created_at", "2023-03-29 10:13:06.481727"], ["updated_at", "2023-03-29 10:13:06.481727"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Id neque adipisci ipsum."], ["content", "Exercitationem consequatur placeat. Eos rerum repudiandae. Qui eos omnis.<br>Voluptatum suscipit delectus. Quam culpa aspernatur. Maxime voluptas dolorum.<br>Qui voluptatem molestiae. Magnam at reprehenderit. Quia corrupti ea."], ["user_id", 9], ["book_id", 10], ["created_at", "2023-03-29 10:13:06.492527"], ["updated_at", "2023-03-29 10:13:06.492527"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Aperiam qui officiis ut."], ["content", "Modi itaque commodi. Sed aliquam fuga. Occaecati ab error.<br>Dolorem iste adipisci. Laboriosam quia non. Dolores ut delectus.<br>Ipsum ex sed. Rerum quo eaque. Aperiam illo ea."], ["user_id", 9], ["book_id", 3], ["created_at", "2023-03-29 10:13:06.500211"], ["updated_at", "2023-03-29 10:13:06.500211"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Accusamus id et et."], ["content", "Vitae rerum et. Et non molestias. Sint et qui.<br>Non dicta inventore. Maxime ipsa nesciunt. Neque quisquam inventore.<br>Porro reprehenderit voluptas. Molestiae enim velit. Quia at qui."], ["user_id", 10], ["book_id", 7], ["created_at", "2023-03-29 10:13:06.507843"], ["updated_at", "2023-03-29 10:13:06.507843"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-03-29 13:14:00 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.2ms | Allocations: 528)
+Completed 200 OK in 11ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 3612)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-03-29 13:14:06 +0300
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.31ms)
+Completed 200 OK in 112ms (Views: 99.1ms | ActiveRecord: 0.8ms | Allocations: 13071)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-03-29 13:14:06 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  

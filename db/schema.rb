@@ -19,23 +19,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_080950) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "title"
-    t.string "author"
+    t.string "title", null: false
+    t.string "author", null: false
     t.text "description"
-    t.string "cover_image"
+    t.string "cover_image", default: "https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "genres", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
+    t.string "title", null: false
+    t.text "content", null: false
     t.integer "user_id"
     t.integer "book_id"
     t.datetime "created_at", null: false
@@ -43,10 +43,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_080950) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
-    t.string "profile_image"
+    t.string "username", null: false
+    t.string "email", null: false
+    t.string "password_digest", null: false
+    t.string "profile_image", default: "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
