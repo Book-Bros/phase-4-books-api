@@ -936,3 +936,237 @@ Migrating to CreateGenres (20230328080950)
   [1m[36mTRANSACTION (105.9ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Hobbit"], ["author", "JRR Tolkien"], ["description", "Bilbo Baggins is a hobbit who enjoys a comfortable, unambitious life, rarely traveling any farther than his pantry or cellar. But his contentment is disturbed when the wizard Gandalf and a company of dwarves arrive on his doorstep one day to whisk him away on an adventure. They have launched a plot to raid the treasure hoard guarded by Smaug the Magnificent, a large and very dangerous dragon. Bilbo reluctantly joins their quest, unaware that on his journey to the Lonely Mountain he will encounter both a magic ring and a frightening creature known as Gollum."], ["cover_image", "https://m.media-amazon.com/images/I/5187PQgDScL.jpg"], ["created_at", "2023-03-29 07:58:20.321150"], ["updated_at", "2023-03-29 07:58:20.321150"]]
+  [1m[36mTRANSACTION (104.8ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users" for 127.0.0.1 at 2023-03-29 11:00:57 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ArgumentError (Unknown validator: 'PresenseValidator'):
+  
+app/models/user.rb:6:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Started POST "/users" for 127.0.0.1 at 2023-03-29 11:01:41 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"testing", "email"=>"testing@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"testing", "email"=>"testing@mail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f06be1e1ce0>, params: {"username"=>"testing", "email"=>"testing@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"testing", "email"=>"testing@mail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 473ms (Views: 21.5ms | ActiveRecord: 1.7ms | Allocations: 9281)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 11:01:58 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"testing", "email"=>"testing@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"testing", "email"=>"testing@mail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f06be227b28>, params: {"username"=>"testing", "email"=>"testing@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"testing", "email"=>"testing@mail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "testing"], ["email", "testing@mail.com"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 08:01:58.560452"], ["updated_at", "2023-03-29 08:01:58.560452"]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (132.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.16ms)
+Completed 201 Created in 529ms (Views: 104.2ms | ActiveRecord: 133.3ms | Allocations: 4212)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 11:02:17 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"testing2", "email"=>"testin2g@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"testing2", "email"=>"testin2g@mail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f06be25fd20>, params: {"username"=>"testing2", "email"=>"testin2g@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"testing2", "email"=>"testin2g@mail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "testing2"], ["email", "testin2g@mail.com"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 08:02:17.597095"], ["updated_at", "2023-03-29 08:02:17.597095"]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (93.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.58ms)
+Completed 201 Created in 381ms (Views: 1.2ms | ActiveRecord: 93.5ms | Allocations: 2337)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 11:02:26 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"testing3", "email"=>"testin3g@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"testing3", "email"=>"testin3g@mail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f06be27e608>, params: {"username"=>"testing3", "email"=>"testin3g@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"testing3", "email"=>"testin3g@mail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "profile_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "testing3"], ["email", "testin3g@mail.com"], ["password_digest", "[FILTERED]"], ["profile_image", "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"], ["created_at", "2023-03-29 08:02:26.583650"], ["updated_at", "2023-03-29 08:02:26.583650"]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (84.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 201 Created in 375ms (Views: 0.9ms | ActiveRecord: 84.9ms | Allocations: 2311)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-29 11:03:38 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testing", "password"=>"[FILTERED]", "user"=>{"username"=>"testing"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 309ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 2661)
+
+
+Started POST "/users/checklogin" for 127.0.0.1 at 2023-03-29 11:04:18 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users/checklogin"):
+  
+Started GET "/users/checklogin" for 127.0.0.1 at 2023-03-29 11:04:24 +0300
+Processing by UsersController#check_logged_in as */*
+  Parameters: {"username"=>"testing", "password"=>"[FILTERED]", "user"=>{"username"=>"testing"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.18ms)
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 1041)
+
+
+Started POST "/users/update-password" for 127.0.0.1 at 2023-03-29 11:08:00 +0300
+Processing by UsersController#update_password as */*
+  Parameters: {"password"=>"[FILTERED]", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `update_password'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "[FILTERED]"], ["updated_at", "2023-03-29 08:08:01.102159"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `update_password'
+  [1m[36mTRANSACTION (94.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `update_password'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 385ms (Views: 1.5ms | ActiveRecord: 95.1ms | Allocations: 2928)
+
+
+Started POST "/users/update-password" for 127.0.0.1 at 2023-03-29 11:08:24 +0300
+Processing by UsersController#update_password as */*
+  Parameters: {"password"=>"[FILTERED]", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `update_password'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "[FILTERED]"], ["updated_at", "2023-03-29 08:08:24.806483"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `update_password'
+  [1m[36mTRANSACTION (90.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `update_password'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 387ms (Views: 0.8ms | ActiveRecord: 91.1ms | Allocations: 2717)
+
+
+Started POST "/users/update-password" for 127.0.0.1 at 2023-03-29 11:08:31 +0300
+Processing by UsersController#update_password as */*
+  Parameters: {"password"=>"[FILTERED]", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 422 Unprocessable Entity in 282ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 1458)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-03-29 11:12:50 +0300
+Processing by BooksController#create as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"Okonkwo ruled his household with a heavy hand. His wives, especially the youngest, lived in perpetual fear of his fiery temper, and so did his little children. Perhaps down in his heart Okonkwo was not a cruel man. But his whole life was dominated by fear, the fear of failure and of weakness. It was deeper and more intimate than the fear of evil and capricious gods and of magic, the fear of the forest, and of the forces of nature, malevolent, red in tooth and claw. Okonkwo's fear was greater than these. It was not external but lay deep within himself. It was the fear of himself, lest he should be found to resemble his father.", "book"=>{"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"Okonkwo ruled his household with a heavy hand. His wives, especially the youngest, lived in perpetual fear of his fiery temper, and so did his little children. Perhaps down in his heart Okonkwo was not a cruel man. But his whole life was dominated by fear, the fear of failure and of weakness. It was deeper and more intimate than the fear of evil and capricious gods and of magic, the fear of the forest, and of the forces of nature, malevolent, red in tooth and claw. Okonkwo's fear was greater than these. It was not external but lay deep within himself. It was the fear of himself, lest he should be found to resemble his father."}}
+[31mUnpermitted parameter: :book. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f06be2a4ce0>, params: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"Okonkwo ruled his household with a heavy hand. His wives, especially the youngest, lived in perpetual fear of his fiery temper, and so did his little children. Perhaps down in his heart Okonkwo was not a cruel man. But his whole life was dominated by fear, the fear of failure and of weakness. It was deeper and more intimate than the fear of evil and capricious gods and of magic, the fear of the forest, and of the forces of nature, malevolent, red in tooth and claw. Okonkwo's fear was greater than these. It was not external but lay deep within himself. It was the fear of himself, lest he should be found to resemble his father.", "controller"=>"books", "action"=>"create", "book"=>{"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"Okonkwo ruled his household with a heavy hand. His wives, especially the youngest, lived in perpetual fear of his fiery temper, and so did his little children. Perhaps down in his heart Okonkwo was not a cruel man. But his whole life was dominated by fear, the fear of failure and of weakness. It was deeper and more intimate than the fear of evil and capricious gods and of magic, the fear of the forest, and of the forces of nature, malevolent, red in tooth and claw. Okonkwo's fear was greater than these. It was not external but lay deep within himself. It was the fear of himself, lest he should be found to resemble his father."}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:17:in `create'
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Things fall apart"], ["author", "Chinua Achebe"], ["description", "Okonkwo ruled his household with a heavy hand. His wives, especially the youngest, lived in perpetual fear of his fiery temper, and so did his little children. Perhaps down in his heart Okonkwo was not a cruel man. But his whole life was dominated by fear, the fear of failure and of weakness. It was deeper and more intimate than the fear of evil and capricious gods and of magic, the fear of the forest, and of the forces of nature, malevolent, red in tooth and claw. Okonkwo's fear was greater than these. It was not external but lay deep within himself. It was the fear of himself, lest he should be found to resemble his father."], ["cover_image", "https://static.vecteezy.com/system/resources/previews/008/659/112/original/eps10-grey-book-or-diary-solid-icon-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg"], ["created_at", "2023-03-29 08:12:50.954365"], ["updated_at", "2023-03-29 08:12:50.954365"]]
+  ↳ app/controllers/books_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (113.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:17:in `create'
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (1.03ms)
+Completed 201 Created in 140ms (Views: 7.2ms | ActiveRecord: 114.9ms | Allocations: 6305)
+
+
+Started PUT "/books/2" for 127.0.0.1 at 2023-03-29 11:14:24 +0300
+Processing by BooksController#update as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"Okonkwo ruled his household with a heavy hand. His wives, especially the youngest, lived in perpetual fear of his fiery temper, and so did his little children. Perhaps down in his heart Okonkwo was not a cruel man. But his whole life was dominated by fear, the fear of failure and of weakness. It was deeper and more intimate than the fear of evil and capricious gods and of magic, the fear of the forest, and of the forces of nature, malevolent, red in tooth and claw. Okonkwo's fear was greater than these. It was not external but lay deep within himself. It was the fear of himself, lest he should be found to resemble his father.", "cover_image"=>"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61l+VmohEOL._SX322_BO1,204,203,200_.jpg", "id"=>"2", "book"=>{"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"Okonkwo ruled his household with a heavy hand. His wives, especially the youngest, lived in perpetual fear of his fiery temper, and so did his little children. Perhaps down in his heart Okonkwo was not a cruel man. But his whole life was dominated by fear, the fear of failure and of weakness. It was deeper and more intimate than the fear of evil and capricious gods and of magic, the fear of the forest, and of the forces of nature, malevolent, red in tooth and claw. Okonkwo's fear was greater than these. It was not external but lay deep within himself. It was the fear of himself, lest he should be found to resemble his father.", "cover_image"=>"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61l+VmohEOL._SX322_BO1,204,203,200_.jpg"}}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:36:in `book'
+[31mUnpermitted parameters: :id, :book. Context: { controller: BooksController, action: update, request: #<ActionDispatch::Request:0x00007f06be1ec640>, params: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"Okonkwo ruled his household with a heavy hand. His wives, especially the youngest, lived in perpetual fear of his fiery temper, and so did his little children. Perhaps down in his heart Okonkwo was not a cruel man. But his whole life was dominated by fear, the fear of failure and of weakness. It was deeper and more intimate than the fear of evil and capricious gods and of magic, the fear of the forest, and of the forces of nature, malevolent, red in tooth and claw. Okonkwo's fear was greater than these. It was not external but lay deep within himself. It was the fear of himself, lest he should be found to resemble his father.", "cover_image"=>"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61l+VmohEOL._SX322_BO1,204,203,200_.jpg", "controller"=>"books", "action"=>"update", "id"=>"2", "book"=>{"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"Okonkwo ruled his household with a heavy hand. His wives, especially the youngest, lived in perpetual fear of his fiery temper, and so did his little children. Perhaps down in his heart Okonkwo was not a cruel man. But his whole life was dominated by fear, the fear of failure and of weakness. It was deeper and more intimate than the fear of evil and capricious gods and of magic, the fear of the forest, and of the forces of nature, malevolent, red in tooth and claw. Okonkwo's fear was greater than these. It was not external but lay deep within himself. It was the fear of himself, lest he should be found to resemble his father.", "cover_image"=>"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61l+VmohEOL._SX322_BO1,204,203,200_.jpg"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:23:in `update'
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "cover_image" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["cover_image", "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61l+VmohEOL._SX322_BO1,204,203,200_.jpg"], ["updated_at", "2023-03-29 08:14:24.419236"], ["id", 2]]
+  ↳ app/controllers/books_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (103.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:23:in `update'
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:36:in `book'
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (2.01ms)
+Completed 200 OK in 124ms (Views: 4.6ms | ActiveRecord: 104.7ms | Allocations: 3741)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-03-29 11:15:21 +0300
+Processing by BooksController#index as */*
+  Parameters: {"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"Okonkwo ruled his household with a heavy hand. His wives, especially the youngest, lived in perpetual fear of his fiery temper, and so did his little children. Perhaps down in his heart Okonkwo was not a cruel man. But his whole life was dominated by fear, the fear of failure and of weakness. It was deeper and more intimate than the fear of evil and capricious gods and of magic, the fear of the forest, and of the forces of nature, malevolent, red in tooth and claw. Okonkwo's fear was greater than these. It was not external but lay deep within himself. It was the fear of himself, lest he should be found to resemble his father.", "cover_image"=>"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61l+VmohEOL._SX322_BO1,204,203,200_.jpg", "book"=>{"title"=>"Things fall apart", "author"=>"Chinua Achebe", "description"=>"Okonkwo ruled his household with a heavy hand. His wives, especially the youngest, lived in perpetual fear of his fiery temper, and so did his little children. Perhaps down in his heart Okonkwo was not a cruel man. But his whole life was dominated by fear, the fear of failure and of weakness. It was deeper and more intimate than the fear of evil and capricious gods and of magic, the fear of the forest, and of the forces of nature, malevolent, red in tooth and claw. Okonkwo's fear was greater than these. It was not external but lay deep within himself. It was the fear of himself, lest he should be found to resemble his father.", "cover_image"=>"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61l+VmohEOL._SX322_BO1,204,203,200_.jpg"}}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.73ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 1400)
+
+
+Started POST "/books/1/reviews" for 127.0.0.1 at 2023-03-29 11:17:44 +0300
+Processing by ReviewsController#create as */*
+  Parameters: {"title"=>"Nice read", "content"=>"Really nice book. I especially like it for the lore and ...", "book_id"=>"1", "review"=>{"title"=>"Nice read", "content"=>"Really nice book. I especially like it for the lore and ..."}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `user'
+[31mUnpermitted parameter: :review. Context: { controller: ReviewsController, action: create, request: #<ActionDispatch::Request:0x00007f06be2412d0>, params: {"title"=>"Nice read", "content"=>"Really nice book. I especially like it for the lore and ...", "controller"=>"reviews", "action"=>"create", "book_id"=>"1", "review"=>{"title"=>"Nice read", "content"=>"Really nice book. I especially like it for the lore and ..."}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+  [1m[36mReview Create (2.1ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nice read"], ["content", "Really nice book. I especially like it for the lore and ..."], ["user_id", 1], ["book_id", 1], ["created_at", "2023-03-29 08:17:44.611299"], ["updated_at", "2023-03-29 08:17:44.611299"]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (86.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Review (1.0ms)
+Completed 200 OK in 285ms (Views: 4.6ms | ActiveRecord: 91.3ms | Allocations: 9806)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2023-03-29 11:18:17 +0300
+Processing by BooksController#show as */*
+  Parameters: {"title"=>"Nice read", "content"=>"Really nice book. I especially like it for the lore and ...", "id"=>"1", "book"=>{"title"=>"Nice read"}}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:36:in `book'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:12:in `show'
+[active_model_serializers] No serializer found for resource: #<Review id: 1, title: "Nice read", content: "Really nice book. I especially like it for the lor...", user_id: 1, book_id: 1, created_at: "2023-03-29 08:17:44.611299000 +0000", updated_at: "2023-03-29 08:17:44.611299000 +0000">
+[active_model_serializers]   [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "book_genres" ON "genres"."id" = "book_genres"."genre_id" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:12:in `show'
+[active_model_serializers] Rendered SingleBookSerializer with ActiveModelSerializers::Adapter::Attributes (59.27ms)
+Completed 200 OK in 72ms (Views: 56.5ms | ActiveRecord: 3.8ms | Allocations: 10352)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2023-03-29 11:21:15 +0300
+Processing by BooksController#destroy as */*
+  Parameters: {"title"=>"Nice read", "content"=>"Really nice book. I especially like it for the lore and ...", "id"=>"1", "book"=>{"title"=>"Nice read"}}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:36:in `book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+  [1m[36mReview Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+  [1m[36mBookGenre Load (0.1ms)[0m  [1m[34mSELECT "book_genres".* FROM "book_genres" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+  [1m[36mBook Destroy (0.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (104.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 204 No Content in 122ms (Views: 1.0ms | ActiveRecord: 105.8ms | Allocations: 4969)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-03-29 11:21:25 +0300
+Processing by BooksController#index as */*
+  Parameters: {"title"=>"Nice read", "content"=>"Really nice book. I especially like it for the lore and ...", "book"=>{"title"=>"Nice read"}}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.64ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 1122)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2023-03-29 11:21:33 +0300
+Processing by BooksController#show as */*
+  Parameters: {"title"=>"Nice read", "content"=>"Really nice book. I especially like it for the lore and ...", "id"=>"1", "book"=>{"title"=>"Nice read"}}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:36:in `book'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 803)
+
+

@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
     def update
         review = user.reviews.find_by(id: params[:id])
         if review
-            review.update(reviews_params)
+            review.update!(reviews_params)
             render json: review
         else
             render json: {error: "review not found"}, status: :not_found
