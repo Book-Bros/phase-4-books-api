@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :genres
   # resources :book_genres
-  resources :books, only: [:show, :update, :destroy]
+  resources :books
   # resources :reviews, only:[:create]
   # resources :users, only: [:]
 
