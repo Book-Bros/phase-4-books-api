@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :genres
+  resources :genres, only: [:index]
   # resources :book_genres
   resources :books
   # resources :reviews, only:[:create]

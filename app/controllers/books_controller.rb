@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+
+  skip_before_action :authorize, only: [:index]
+
 wrap_parameters format: []
 
     rescue_from ActiveRecord::RecordInvalid, with: :not_valid_book
