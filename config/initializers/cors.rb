@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "http://localhost:3001"
+    origins "https://ubiquitous-manatee-cc6e00.netlify.app"
 
     resource "*",
       headers: :any,
