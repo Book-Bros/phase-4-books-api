@@ -78,6 +78,29 @@
     ```
 
 
+## Endpoints
+### genres
+        resources :genres, only: [:index]
+
+### books
+         resources :books
+
+
+
+### user
+        post '/users', to: 'users#create'
+        post '/users/login', to: 'users#login'
+        get '/users/logout', to: 'users#logout'
+        get '/users/checklogin', to: 'users#check_logged_in'
+        post '/users/update-password', to: 'users#update_password'
+
+  ### Reviews
+        post '/books/:book_id/reviews', to: "reviews#create"
+        get '/books/:book_id/reviews/:id', to: "reviews#show"
+        get '/books/:book_id/reviews', to: "reviews#index"
+        delete '/books/:book_id/reviews/:id', to: "reviews#destroy"
+        put '/books/:book_id/reviews/:id', to: "reviews#update"
+
 ## Contributers
  ![](http://ForTheBadge.com/images/badges/built-by-developers.svg)
 

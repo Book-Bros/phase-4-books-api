@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         found_user = User.find_by(username: params[:username])
         if found_user&.authenticate(params[:password])
             session[:uid] = found_user.id
-            render json: {message: "Logged in successfully"}, status: :ok
+            render json: {message: "Logged in successfully", info: found_user.id}, status: :ok
         else
             render json: {message: "Invalid username or password"}, status: :unauthorized
         end
