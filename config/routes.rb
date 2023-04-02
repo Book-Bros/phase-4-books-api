@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/users/logout', to: 'users#logout'
   get '/users/checklogin', to: 'users#check_logged_in'
   post '/users/update-password', to: 'users#update_password'
+  post '/users/forgot-password', to: 'users#forgot_password'
 
   # Reviews
 post '/books/:book_id/reviews', to: "reviews#create"

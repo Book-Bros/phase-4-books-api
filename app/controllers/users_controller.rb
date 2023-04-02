@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: [:login, :create, :check_logged_in]
+    skip_before_action :authorize, only: [:login, :create, :check_logged_in, :forgot_password]
 
 
     def create
@@ -25,6 +25,16 @@ class UsersController < ApplicationController
     def update_password
         user.update!(password: params[:password])
         render json: {message: "Password updated successfully"}, status: :ok
+    end
+
+    def forgot_password
+        forgoten_user = User.find_by(username: params[:username])
+        if forgoten_user
+            forgoten_user.update!(password: params[:password])
+            render json: {message: "Password updated successfully"}, status: :ok
+        else
+            render json: {message: "User not found"}, status: :not_found
+        end
     end
 
     def check_logged_in
