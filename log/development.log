@@ -20927,3 +20927,386 @@ No serializer found for resource: #<Genre id: 1, name: "Science Fiction", create
 Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.5ms | Allocations: 2718)
 
 
+Started GET "/users/checklogin" for ::1 at 2023-04-02 21:25:25 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#check_logged_in as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.09ms)
+Completed 200 OK in 128ms (Views: 19.0ms | ActiveRecord: 2.7ms | Allocations: 41847)
+
+
+Started GET "/users/checklogin" for ::1 at 2023-04-02 21:25:25 +0300
+Processing by UsersController#check_logged_in as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.73ms)
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 806)
+
+
+Started POST "/users/login" for ::1 at 2023-04-02 21:33:40 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"darwin", "password"=>"[FILTERED]", "user"=>{"username"=>"darwin"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "darwin"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 200 OK in 682ms (Views: 4.6ms | ActiveRecord: 1.6ms | Allocations: 2635)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:33:47 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.9ms)
+Completed 200 OK in 91ms (Views: 61.3ms | ActiveRecord: 4.1ms | Allocations: 21781)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:33:47 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.2ms)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.5ms | Allocations: 1848)
+
+
+Started GET "/books/3" for ::1 at 2023-04-02 21:33:49 +0300
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `book'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 3]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers]   [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "book_genres" ON "genres"."id" = "book_genres"."genre_id" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 3]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Genre id: 11, name: "Cooking", created_at: "2023-03-29 12:29:42.901565000 +0000", updated_at: "2023-03-29 12:29:42.901565000 +0000">
+[active_model_serializers] Rendered SingleBookSerializer with ActiveModelSerializers::Adapter::Attributes (128.26ms)
+Completed 200 OK in 154ms (Views: 125.3ms | ActiveRecord: 4.8ms | Allocations: 32858)
+
+
+Started GET "/books/3" for ::1 at 2023-04-02 21:33:49 +0300
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `book'
+[active_model_serializers]   [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 3]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers]   [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "book_genres" ON "genres"."id" = "book_genres"."genre_id" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 3]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Genre id: 11, name: "Cooking", created_at: "2023-03-29 12:29:42.901565000 +0000", updated_at: "2023-03-29 12:29:42.901565000 +0000">
+[active_model_serializers] Rendered SingleBookSerializer with ActiveModelSerializers::Adapter::Attributes (23.12ms)
+Completed 200 OK in 30ms (Views: 22.9ms | ActiveRecord: 1.9ms | Allocations: 2971)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:33:51 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.73ms)
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 0.6ms | Allocations: 1858)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:33:51 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.91ms)
+Completed 200 OK in 22ms (Views: 16.1ms | ActiveRecord: 0.6ms | Allocations: 1841)
+
+
+Started GET "/books/3" for ::1 at 2023-04-02 21:33:53 +0300
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `book'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 3]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers]   [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "book_genres" ON "genres"."id" = "book_genres"."genre_id" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 3]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Genre id: 11, name: "Cooking", created_at: "2023-03-29 12:29:42.901565000 +0000", updated_at: "2023-03-29 12:29:42.901565000 +0000">
+[active_model_serializers] Rendered SingleBookSerializer with ActiveModelSerializers::Adapter::Attributes (22.64ms)
+Completed 200 OK in 30ms (Views: 23.2ms | ActiveRecord: 1.2ms | Allocations: 2978)
+
+
+Started GET "/books/3" for ::1 at 2023-04-02 21:33:53 +0300
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `book'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 3]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers]   [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "book_genres" ON "genres"."id" = "book_genres"."genre_id" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 3]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Genre id: 11, name: "Cooking", created_at: "2023-03-29 12:29:42.901565000 +0000", updated_at: "2023-03-29 12:29:42.901565000 +0000">
+[active_model_serializers] Rendered SingleBookSerializer with ActiveModelSerializers::Adapter::Attributes (21.75ms)
+Completed 200 OK in 28ms (Views: 22.2ms | ActiveRecord: 1.2ms | Allocations: 2977)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:34:06 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.06ms)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.4ms | Allocations: 1843)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:34:06 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.03ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.5ms | Allocations: 1843)
+
+
+Started GET "/books/4" for ::1 at 2023-04-02 21:34:07 +0300
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `book'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 4]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Review id: 9, title: "solid", content: "Cant cap that was awsome not bad my guy", user_id: 4, book_id: 4, created_at: "2023-04-02 12:46:44.130934000 +0000", updated_at: "2023-04-02 12:46:44.130934000 +0000">
+[active_model_serializers]   [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "book_genres" ON "genres"."id" = "book_genres"."genre_id" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 4]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Genre id: 20, name: "Science", created_at: "2023-03-29 12:29:43.744195000 +0000", updated_at: "2023-03-29 12:29:43.744195000 +0000">
+[active_model_serializers] Rendered SingleBookSerializer with ActiveModelSerializers::Adapter::Attributes (74.22ms)
+Completed 200 OK in 82ms (Views: 73.1ms | ActiveRecord: 3.0ms | Allocations: 18042)
+
+
+Started GET "/books/4" for ::1 at 2023-04-02 21:34:07 +0300
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `book'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 4]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Review id: 9, title: "solid", content: "Cant cap that was awsome not bad my guy", user_id: 4, book_id: 4, created_at: "2023-04-02 12:46:44.130934000 +0000", updated_at: "2023-04-02 12:46:44.130934000 +0000">
+[active_model_serializers]   [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "book_genres" ON "genres"."id" = "book_genres"."genre_id" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 4]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Genre id: 20, name: "Science", created_at: "2023-03-29 12:29:43.744195000 +0000", updated_at: "2023-03-29 12:29:43.744195000 +0000">
+[active_model_serializers] Rendered SingleBookSerializer with ActiveModelSerializers::Adapter::Attributes (16.4ms)
+Completed 200 OK in 23ms (Views: 16.9ms | ActiveRecord: 0.9ms | Allocations: 3155)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:34:11 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.17ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.5ms | Allocations: 1851)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:34:11 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.4ms)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.7ms | Allocations: 1851)
+
+
+Started GET "/books/1" for ::1 at 2023-04-02 21:34:12 +0300
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `book'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers]   [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "book_genres" ON "genres"."id" = "book_genres"."genre_id" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Genre id: 12, name: "Travel", created_at: "2023-03-29 12:29:42.992720000 +0000", updated_at: "2023-03-29 12:29:42.992720000 +0000">
+[active_model_serializers] Rendered SingleBookSerializer with ActiveModelSerializers::Adapter::Attributes (19.19ms)
+Completed 200 OK in 26ms (Views: 19.6ms | ActiveRecord: 1.2ms | Allocations: 2968)
+
+
+Started GET "/books/1" for ::1 at 2023-04-02 21:34:12 +0300
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `book'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers]   [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "book_genres" ON "genres"."id" = "book_genres"."genre_id" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Genre id: 12, name: "Travel", created_at: "2023-03-29 12:29:42.992720000 +0000", updated_at: "2023-03-29 12:29:42.992720000 +0000">
+[active_model_serializers] Rendered SingleBookSerializer with ActiveModelSerializers::Adapter::Attributes (19.77ms)
+Completed 200 OK in 27ms (Views: 20.4ms | ActiveRecord: 1.3ms | Allocations: 2965)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:34:14 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.97ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.7ms | Allocations: 1839)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:34:14 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.71ms)
+Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 0.5ms | Allocations: 1839)
+
+
+Started GET "/books/5" for ::1 at 2023-04-02 21:34:17 +0300
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `book'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 5]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Review id: 5, title: "wonder", content: "I dont know i like it and i dont will see how it a...", user_id: 4, book_id: 5, created_at: "2023-04-02 03:15:31.620979000 +0000", updated_at: "2023-04-02 04:14:20.458428000 +0000">
+[active_model_serializers]   [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "book_genres" ON "genres"."id" = "book_genres"."genre_id" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 5]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Genre id: 8, name: "Contemporary Fiction", created_at: "2023-03-29 12:29:42.636525000 +0000", updated_at: "2023-03-29 12:29:42.636525000 +0000">
+[active_model_serializers] Rendered SingleBookSerializer with ActiveModelSerializers::Adapter::Attributes (19.26ms)
+Completed 200 OK in 26ms (Views: 19.6ms | ActiveRecord: 1.1ms | Allocations: 3159)
+
+
+Started GET "/books/5" for ::1 at 2023-04-02 21:34:17 +0300
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `book'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 5]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Review id: 5, title: "wonder", content: "I dont know i like it and i dont will see how it a...", user_id: 4, book_id: 5, created_at: "2023-04-02 03:15:31.620979000 +0000", updated_at: "2023-04-02 04:14:20.458428000 +0000">
+[active_model_serializers]   [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "book_genres" ON "genres"."id" = "book_genres"."genre_id" WHERE "book_genres"."book_id" = ?[0m  [["book_id", 5]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Genre id: 8, name: "Contemporary Fiction", created_at: "2023-03-29 12:29:42.636525000 +0000", updated_at: "2023-03-29 12:29:42.636525000 +0000">
+[active_model_serializers] Rendered SingleBookSerializer with ActiveModelSerializers::Adapter::Attributes (70.71ms)
+Completed 200 OK in 77ms (Views: 71.4ms | ActiveRecord: 1.3ms | Allocations: 3158)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:34:20 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.06ms)
+Completed 200 OK in 28ms (Views: 18.8ms | ActiveRecord: 0.5ms | Allocations: 1837)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:34:20 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.1ms)
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.5ms | Allocations: 1837)
+
+
+Started GET "/genres" for ::1 at 2023-04-02 21:34:22 +0300
+Processing by GenresController#index as */*
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/genres_controller.rb:8:in `index'
+No serializer found for resource: #<Genre id: 1, name: "Science Fiction", created_at: "2023-03-29 12:29:42.014562000 +0000", updated_at: "2023-03-29 12:29:42.014562000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Genre::ActiveRecord_Relation (9.56ms)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.8ms | Allocations: 3012)
+
+
+Started GET "/genres" for ::1 at 2023-04-02 21:34:22 +0300
+Processing by GenresController#index as */*
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/genres_controller.rb:8:in `index'
+No serializer found for resource: #<Genre id: 1, name: "Science Fiction", created_at: "2023-03-29 12:29:42.014562000 +0000", updated_at: "2023-03-29 12:29:42.014562000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Genre::ActiveRecord_Relation (9.12ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.6ms | Allocations: 2873)
+
+
+Started GET "/users/logout" for ::1 at 2023-04-02 21:34:30 +0300
+Processing by UsersController#logout as */*
+  Parameters: {"user"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 319)
+
+
+Started GET "/users/checklogin" for ::1 at 2023-04-02 21:34:38 +0300
+Processing by UsersController#check_logged_in as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 401 Unauthorized in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 318)
+
+
+Started GET "/users/checklogin" for ::1 at 2023-04-02 21:34:38 +0300
+Processing by UsersController#check_logged_in as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 401 Unauthorized in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 318)
+
+
+Started GET "/users/checklogin" for ::1 at 2023-04-02 21:35:00 +0300
+Processing by UsersController#check_logged_in as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 401 Unauthorized in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 306)
+
+
+Started GET "/users/checklogin" for ::1 at 2023-04-02 21:35:00 +0300
+Processing by UsersController#check_logged_in as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 401 Unauthorized in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 306)
+
+
+Started POST "/users/login" for ::1 at 2023-04-02 21:35:45 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"darwin", "password"=>"[FILTERED]", "user"=>{"username"=>"darwin"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "darwin"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 200 OK in 543ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 776)
+
+
+Started GET "/users/checklogin" for ::1 at 2023-04-02 21:35:53 +0300
+Processing by UsersController#check_logged_in as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.9ms)
+Completed 200 OK in 44ms (Views: 36.6ms | ActiveRecord: 0.6ms | Allocations: 2409)
+
+
+Started GET "/users/checklogin" for ::1 at 2023-04-02 21:35:53 +0300
+Processing by UsersController#check_logged_in as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.12ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.4ms | Allocations: 814)
+
+
+Started POST "/users/login" for ::1 at 2023-04-02 21:36:06 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"darwin", "password"=>"[FILTERED]", "user"=>{"username"=>"darwin"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "darwin"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.24ms)
+Completed 200 OK in 547ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 779)
+
+
+Started GET "/genres" for ::1 at 2023-04-02 21:36:11 +0300
+Processing by GenresController#index as */*
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/genres_controller.rb:8:in `index'
+No serializer found for resource: #<Genre id: 1, name: "Science Fiction", created_at: "2023-03-29 12:29:42.014562000 +0000", updated_at: "2023-03-29 12:29:42.014562000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Genre::ActiveRecord_Relation (11.14ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.6ms | Allocations: 2879)
+
+
+Started GET "/genres" for ::1 at 2023-04-02 21:36:12 +0300
+Processing by GenresController#index as */*
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/genres_controller.rb:8:in `index'
+No serializer found for resource: #<Genre id: 1, name: "Science Fiction", created_at: "2023-03-29 12:29:42.014562000 +0000", updated_at: "2023-03-29 12:29:42.014562000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Genre::ActiveRecord_Relation (10.66ms)
+Completed 200 OK in 22ms (Views: 19.5ms | ActiveRecord: 0.6ms | Allocations: 2879)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:36:13 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.82ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.5ms | Allocations: 1841)
+
+
+Started GET "/books" for ::1 at 2023-04-02 21:36:13 +0300
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.28ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.4ms | Allocations: 1841)
+
+

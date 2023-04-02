@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 
-  skip_before_action :authorize, only: [:index]
+  # skip_before_action :authorize, only: [:index]
 
 wrap_parameters format: []
 
