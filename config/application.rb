@@ -27,6 +27,8 @@ module Phase4BooksApi
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
 
-    config.action_dispatch.cookies_same_site_protection = :lax
+    config.action_dispatch.cookies_same_site_protection = :none
+    config.session_store :cookie_store, key: '_your_app_session', secure: true, same_site: :none
+
   end
 end
